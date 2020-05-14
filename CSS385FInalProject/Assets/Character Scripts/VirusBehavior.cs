@@ -8,6 +8,8 @@ public class VirusBehavior : MonoBehaviour
     public float mProbabilityOfTargetingPlayer = 0.25f;
     public float mMovementSpeed = 0.5f;
     public MainController mMainController;
+    public float secondsSinceLastMove = 0.0f;
+    public float secondsUntilNextMove = 0.0f;
 
     private Transform mTarget;
 
@@ -22,8 +24,19 @@ public class VirusBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += (mTarget.position - transform.position).normalized * mMovementSpeed * Time.deltaTime;
+        secondsSinceLastMove += Time.deltaTime;
 
+        if (secondsSinceLastMove > secondsUntilNextMove)
+        {
+            transform.position += (mTarget.position - transform.position).normalized * mMovementSpeed * Time.deltaTime;
+            Vector2 direction = (mTarget.position - transform.position).normalized;
+            direction += (Random.insideUnitCircle);
+            Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+            rigidbody.AddForce(direction * mMovementSpeed, ForceMode2D.Impulse);
+
+            secondsSinceLastMove = 0.0f;
+            secondsUntilNextMove = Random.value;
+        }
 
         if (mTarget.CompareTag("Cell"))
         {
