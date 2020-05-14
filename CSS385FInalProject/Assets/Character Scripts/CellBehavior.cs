@@ -76,4 +76,9 @@ public class CellBehavior : MonoBehaviour
             Infect();
         }
     }
+
+    public bool IsInfected()
+    {
+        return infected;
+    }
 }
