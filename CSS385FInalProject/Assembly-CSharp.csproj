@@ -64,9 +64,14 @@
   <ItemGroup>
     <Compile Include="Assets\Character Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Character Scripts\CellBehavior.cs" />
+    <Compile Include="Assets\Character Scripts\CharacterStats.cs" />
     <Compile Include="Assets\Character Scripts\Movement.cs" />
     <Compile Include="Assets\Character Scripts\Shoot.cs" />
     <Compile Include="Assets\Character Scripts\VirusBehavior.cs" />
+    <Compile Include="Assets\Character Scripts\WideShotPower.cs" />
+    <Compile Include="Assets\Controller Scripts\CellManager.cs" />
+    <Compile Include="Assets\Controller Scripts\MainController.cs" />
+    <Compile Include="Assets\Controller Scripts\ObjectPool.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/bucco/OneDrive/Desktop/CSS385FInalProject/CSS385Finalproject/CSS385FInalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

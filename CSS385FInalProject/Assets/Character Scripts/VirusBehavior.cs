@@ -5,6 +5,7 @@ using UnityEngine;
 public class VirusBehavior : MonoBehaviour
 {
     public int health = 2;
+    public static int damage = 1;
     public float mProbabilityOfTargetingPlayer = 0.25f;
     public float mMovementSpeed = 0.5f;
     public MainController mMainController;
@@ -50,13 +51,14 @@ public class VirusBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            --health;
+            health -= Shoot.damage;
             if (health <= 0)
             {
                 //Destroy(this.gameObject);
                 gameObject.SetActive(false);
+                CharacterStats.enemiesDestroyed += 1;
             }
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
