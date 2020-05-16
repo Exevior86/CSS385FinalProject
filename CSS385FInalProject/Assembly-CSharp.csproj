@@ -67,6 +67,7 @@
     <Compile Include="Assets\Character Scripts\CellBehavior.cs" />
     <Compile Include="Assets\Character Scripts\Movement.cs" />
     <Compile Include="Assets\Character Scripts\Shoot.cs" />
+    <Compile Include="Assets\Character Scripts\UIScript.cs" />
     <Compile Include="Assets\Character Scripts\VirusBehavior.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Antonio Yun/Documents/Spring2020/CSSE 385/CSS385Finalproject/CSS385FInalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
