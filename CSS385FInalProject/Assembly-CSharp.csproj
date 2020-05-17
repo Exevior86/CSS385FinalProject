@@ -67,6 +67,8 @@
     <Compile Include="Assets\Character Scripts\CharacterStats.cs" />
     <Compile Include="Assets\Character Scripts\Movement.cs" />
     <Compile Include="Assets\Character Scripts\Shoot.cs" />
+    <Compile Include="Assets\Character Scripts\SwimMovement.cs" />
+    <Compile Include="Assets\Character Scripts\SwimTemporaryWander.cs" />
     <Compile Include="Assets\Character Scripts\VirusBehavior.cs" />
     <Compile Include="Assets\Character Scripts\WideShotPower.cs" />
     <Compile Include="Assets\Controller Scripts\CellManager.cs" />
