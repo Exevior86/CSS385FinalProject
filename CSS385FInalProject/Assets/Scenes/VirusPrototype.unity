@@ -412,7 +412,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1501427357}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &775567467
 PolygonCollider2D:
@@ -728,8 +728,8 @@ Transform:
   m_LocalPosition: {x: 0.5568046, y: -2.6017897, z: -1655.4746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6088569591417881969}
   - {fileID: 775567466}
+  - {fileID: 6088569591417881969}
   - {fileID: 1121364429}
   m_Father: {fileID: 0}
   m_RootOrder: 3
