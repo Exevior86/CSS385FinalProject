@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
    // public GameObject crosshairs;
     public GameObject player;
     public GameObject bulletPrefab;
+    public GameObject crosshairs;
     public float bulletSpeed = 15.0f;
 
     public static float cooldown = .1f;
@@ -19,29 +20,29 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = true;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         target = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-     //   crosshairs.transform.position = new Vector2(target.x, target.y);
+        crosshairs.transform.position = new Vector2(target.x, target.y);
 
         Vector3 difference = target - transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         difference.Normalize();
+        if (powerUpCdTimer > 0)
+        {
+            powerUpCdTimer -= Time.deltaTime;
+        }
 
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
         if (Input.GetMouseButton(0))
         {
-            if (cooldownTimer > 0)
-            {
-                cooldownTimer -= Time.deltaTime;
-            }
-            if (powerUpCdTimer > 0)
-            {
-                powerUpCdTimer -= Time.deltaTime;
-            }   
             if (cooldownTimer <= 0)
             {
                 if (powerUpCdTimer > 0)
