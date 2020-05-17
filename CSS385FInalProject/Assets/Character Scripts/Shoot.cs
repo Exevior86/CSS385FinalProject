@@ -53,6 +53,7 @@ public class Shoot : MonoBehaviour
                 {
                     fireBullet(difference, rotationZ);
                 }
+                SoundManagerScript.PlaySound("pow");
                 cooldownTimer = cooldown;
             }
            

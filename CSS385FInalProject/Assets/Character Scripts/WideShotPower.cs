@@ -8,7 +8,6 @@ public class WideShotPower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -23,7 +22,7 @@ public class WideShotPower : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Shoot.powerUpCdTimer = cooldown;
-            Debug.Log("Set shoot.powerupCD to " + Shoot.powerUpCdTimer);
+            SoundManagerScript.PlaySound("PowerUpSound");
             Destroy(this.gameObject);
         }
     }

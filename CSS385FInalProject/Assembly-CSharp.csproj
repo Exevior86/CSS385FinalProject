@@ -74,6 +74,7 @@
     <Compile Include="Assets\Controller Scripts\CellManager.cs" />
     <Compile Include="Assets\Controller Scripts\MainController.cs" />
     <Compile Include="Assets\Controller Scripts\ObjectPool.cs" />
+    <Compile Include="Assets\Controller Scripts\SoundManagerScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/bucco/OneDrive/Desktop/CSS385FInalProject/CSS385Finalproject/CSS385FInalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
