@@ -54,7 +54,6 @@ public class VirusBehavior : MonoBehaviour
             health -= Shoot.damage;
             if (health <= 0)
             {
-                //Destroy(this.gameObject);
                 gameObject.SetActive(false);
                 CharacterStats.enemiesDestroyed += 1;
             }
