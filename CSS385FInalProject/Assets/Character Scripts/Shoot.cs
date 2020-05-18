@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     public GameObject crosshairs;
     public float bulletSpeed = 15.0f;
 
-    public static float cooldown = .1f;
+    public static float cooldown = .25f;
     public static float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
 
