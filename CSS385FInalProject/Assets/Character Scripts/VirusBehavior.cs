@@ -15,7 +15,6 @@ public class VirusBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mInsantiationTime = Time.timeSinceLevelLoad;
         mMainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mMainController != null);
     }

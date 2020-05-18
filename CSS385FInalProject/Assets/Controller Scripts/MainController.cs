@@ -16,7 +16,7 @@ public class MainController : MonoBehaviour
     void Awake()
     {
         Debug.Assert(mVirusPool != null);
-        Debug.Assert(mPlayer != null);
+        //Debug.Assert(mPlayer != null);
         mVirusPool.SetObjectType(Resources.Load("Prefabs/virus_0") as GameObject);
     }
 

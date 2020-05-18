@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1703515130
 Transform:
   m_ObjectHideFlags: 0
@@ -4770,7 +4770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2025592409
 Transform:
   m_ObjectHideFlags: 0
@@ -9610,7 +9610,7 @@ MonoBehaviour:
   kSecondsToBeInfected: 4
   cooldown: 2
   cooldownTimer: 0
-  infected: 0
+  infected: 1
   percentInfected: 0
   mInfectionBar: {fileID: 5178802606301051661}
   spriteHealthy: {fileID: 2309948539982372331, guid: f1a819b4377599346b6a1383c7f0e533,

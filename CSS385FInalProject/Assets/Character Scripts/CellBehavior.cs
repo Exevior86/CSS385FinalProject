@@ -122,11 +122,6 @@ public class CellBehavior : MonoBehaviour
         {
             percentInfected = 0;
         }
-        else if (collision.gameObject.CompareTag("Bullet"))
-        {
-            //Infect();
-            percentInfected -= kSecondsToBeInfected;
-        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -135,6 +130,11 @@ public class CellBehavior : MonoBehaviour
         {
             //Infect();
             percentInfected += Time.deltaTime / kSecondsToBeInfected;
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            //Infect();
+            percentInfected -= Time.deltaTime / kSecondsToBeInfected;
         }
     }
 
