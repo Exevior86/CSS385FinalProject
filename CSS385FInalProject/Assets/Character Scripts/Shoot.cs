@@ -7,10 +7,13 @@ public class Shoot : MonoBehaviour
    // public GameObject crosshairs;
     public GameObject player;
     public GameObject bulletPrefab;
+    public GameObject virusPrefab;
     public float bulletSpeed = 15.0f;
 
     public static float cooldown = .2f;
     public static float cooldownTimer = 0;
+
+    public KeyCode k;
 
     private Vector3 target;
     // Start is called before the first frame update
@@ -42,6 +45,20 @@ public class Shoot : MonoBehaviour
             }
            
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            if (cooldownTimer > 0)
+            {
+                cooldownTimer -= Time.deltaTime;
+            }
+            if (cooldownTimer <= 0)
+            {
+                fireVirus(difference, rotationZ);
+                cooldownTimer = cooldown;
+            }
+
+        }
     }
 
     void fireBullet(Vector3 direction, float rotationZ)
@@ -53,4 +70,12 @@ public class Shoot : MonoBehaviour
         Destroy(b.gameObject, 2);
     }
 
+    void fireVirus(Vector3 direction, float rotationZ)
+    {
+        GameObject b = Instantiate(virusPrefab) as GameObject;
+        b.transform.position = transform.position;
+        b.transform.eulerAngles = new Vector3(0f, 0f, direction.z);
+        b.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
+        Destroy(b.gameObject, 2);
+    }
 }

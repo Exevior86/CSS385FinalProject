@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  mProbabilityOfTargetingPlayer: 0.25
+  mProbabilityOfTargetingPlayer: 0
   mTarget: {fileID: 0}
   mMainController: {fileID: 0}
   mMovement: {fileID: 3581559535759447594}
@@ -162,9 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da74bdef60cac4d96c78c1bb449e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpeed: 3
+  mSpeed: 2
   mDirectionNoiseStrength: 1
   kTimeUntilNextDirectionChange: 2
+  mSecondsBetweenDirectionChecks: 0
 --- !u!114 &-777582810398049179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,4 +180,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mMovement: {fileID: 3581559535759447594}
   mBehavior: {fileID: 8453561831220010077}
-  kSecondsToWander: 0
+  kSecondsToWander: 2

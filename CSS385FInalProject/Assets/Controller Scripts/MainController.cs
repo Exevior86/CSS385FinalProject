@@ -35,6 +35,11 @@ public class MainController : MonoBehaviour
         return mCellManager.GetRandomCell();
     }
 
+    public GameObject GetRandomCell(Transform transform)
+    {
+        return mCellManager.GetRandomCloseCell(transform);
+    }
+
     public GameObject GetPlayer()
     {
         return mPlayer;

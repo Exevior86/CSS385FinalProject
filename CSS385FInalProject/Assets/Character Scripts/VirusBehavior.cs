@@ -5,7 +5,7 @@ using UnityEngine;
 public class VirusBehavior : MonoBehaviour
 {
     public int health = 2;
-    public float mProbabilityOfTargetingPlayer = 0.25f;
+    public float mProbabilityOfTargetingPlayer = 0.05f;
     public Transform mTarget;
     public MainController mMainController;
     public SwimMovement mMovement;
@@ -30,8 +30,7 @@ public class VirusBehavior : MonoBehaviour
     {
         if (mTarget != null && mTarget.CompareTag("Cell"))
         {
-            if (Vector3.Distance(transform.position, mTarget.position) < 0.1f
-                || mTarget.GetComponent<CellBehavior>().IsInfected())
+            if (mTarget.GetComponent<CellBehavior>().IsInfected())
             {
                 SelectTarget();
             }
@@ -42,13 +41,12 @@ public class VirusBehavior : MonoBehaviour
     {
         if(Random.value > mProbabilityOfTargetingPlayer)
         {
-            mTarget = mMainController.GetRandomCell().transform;
+            mTarget = mMainController.GetRandomCell(transform).transform;
         }
         else
         {
             mTarget = mMainController.GetPlayer().transform;
         }
-        Debug.Log("changing target");
         mMovement.SetToTarget(mTarget);
     }
 
