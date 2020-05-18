@@ -9,7 +9,6 @@ public class score : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(LivesUI.scoreTime);
         scoreText.text = "Score: " + LivesUI.scoreTime;
     }   
 }

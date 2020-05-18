@@ -28,7 +28,7 @@ public class LivesUI : MonoBehaviour
     {
         if (lives <= 1)
         {
-            SceneManager.LoadScene("Scenes/DefeatUI");
+            SceneManager.LoadScene("Scenes/UI/DefeatUI");
         }
         else
         {

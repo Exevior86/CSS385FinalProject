@@ -13,6 +13,9 @@ public class MainController : MonoBehaviour
     [SerializeField]
     private GameObject mPlayer = null;
 
+    [SerializeField]
+    private LivesUI mLivesUI = null;
+
     void Awake()
     {
         Debug.Assert(mVirusPool != null);
@@ -43,5 +46,10 @@ public class MainController : MonoBehaviour
     public GameObject GetPlayer()
     {
         return mPlayer;
+    }
+
+    public void LowerLives()
+    {
+        mLivesUI.LowerLives();
     }
 }

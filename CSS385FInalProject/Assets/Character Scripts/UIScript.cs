@@ -5,23 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
+
     public void GotoSettings()
     {
-        SceneManager.LoadScene("Scenes/Settings");
+        SceneManager.LoadScene("Scenes/UI/Settings");
     }
 
     public void GotoHighscores()
     {
-        SceneManager.LoadScene("Scenes/Highscores");
+        SceneManager.LoadScene("Scenes/UI/Highscores");
     }
 
     public void GotoGame()
     {
-        SceneManager.LoadScene("Scenes/Prototype test");
+        SceneManager.LoadScene("Scenes/UI/Prototype test");
     }
 
     public void GotoIntro()
     {
-        SceneManager.LoadScene("Scenes/Intro UI");
+        SceneManager.LoadScene("Scenes/UI/Intro UI");
     }
 }

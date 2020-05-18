@@ -27028,6 +27028,7 @@ MonoBehaviour:
   mVirusPool: {fileID: 1734170082}
   mCellManager: {fileID: 586619428}
   mPlayer: {fileID: 804955243}
+  mLivesUI: {fileID: 0}
 --- !u!4 &664777524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
@@ -44827,7 +44828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1043551140
 Transform:
   m_ObjectHideFlags: 0
@@ -94255,6 +94256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4090655872761818881, guid: 80e257b742afefd45bddebe440d15093,
         type: 3}
       propertyPath: m_Name

@@ -220,6 +220,7 @@ MonoBehaviour:
   mVirusPool: {fileID: 1734170082}
   mCellManager: {fileID: 586619428}
   mPlayer: {fileID: 1475954064}
+  mLivesUI: {fileID: 0}
 --- !u!4 &702554673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
@@ -902,7 +903,6 @@ GameObject:
   - component: {fileID: 1475954070}
   - component: {fileID: 1475954069}
   - component: {fileID: 1475954068}
-  - component: {fileID: 1475954067}
   - component: {fileID: 1475954066}
   - component: {fileID: 1475954065}
   m_Layer: 0
@@ -959,18 +959,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1475954067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475954064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1475954068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1026,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 144056267
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -4186569870743770075, guid: eaf7e072f9d2739459127b0a1dd82a0f,
     type: 3}
