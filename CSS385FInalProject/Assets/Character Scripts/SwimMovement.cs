@@ -11,7 +11,11 @@ public class SwimMovement : MonoBehaviour
     private float mTimeOfLastDirectionChange = 0.0f;
     [SerializeField]
     private float kTimeUntilNextDirectionChange = 0.0f;
-    private Vector2 mLastDirection;
+    private Vector2 mDirection;
+
+    [SerializeField]
+    private float mSecondsBetweenDirectionChecks = 0.0f;
+    private float mSecondsSinceLastDirectionCheck = 0.0f;
 
     private Transform mTarget;
 
@@ -21,16 +25,6 @@ public class SwimMovement : MonoBehaviour
     private Vector2 GetRandomDirection()
     {
         return Random.insideUnitCircle;
-        if ((Time.timeSinceLevelLoad - mTimeOfLastDirectionChange) >= kTimeUntilNextDirectionChange)
-        {
-            mLastDirection = Random.insideUnitCircle;
-            mTimeOfLastDirectionChange = Time.timeSinceLevelLoad;
-            return mLastDirection;
-        }
-        else
-        {
-            return mLastDirection;
-        }
     }
 
     private Vector2 GetDirectionToTarget()
@@ -40,18 +34,24 @@ public class SwimMovement : MonoBehaviour
 
     void OnEnable()
     {
-        mLastDirection = Random.insideUnitCircle;
+        mDirection = Random.insideUnitCircle;
         mChooseDirection = GetRandomDirection;
     }
 
     void Update()
     {
         mSecondsSinceLastMove += Time.deltaTime;
+        mSecondsSinceLastDirectionCheck += Time.deltaTime;
+        if (mSecondsSinceLastDirectionCheck > mSecondsBetweenDirectionChecks)
+        {
+            mDirection = mChooseDirection();
+            mSecondsSinceLastDirectionCheck = 0.0f;
+        }
+
 
         if (mSecondsSinceLastMove > mSecondsUntilNextMove)
         {
-            Vector2 direction = mChooseDirection();
-            direction += (Random.insideUnitCircle * mDirectionNoiseStrength);
+            Vector2 direction = mDirection += (Random.insideUnitCircle * mDirectionNoiseStrength);
             Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
             rigidbody.AddForce(direction * mSpeed, ForceMode2D.Impulse);
 
