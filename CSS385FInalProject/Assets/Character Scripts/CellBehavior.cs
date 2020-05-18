@@ -4,43 +4,87 @@ using UnityEngine;
 
 public class CellBehavior : MonoBehaviour
 {
-    public static float cooldown = 1f;
-    public static float cooldownTimer = 0;
+    [SerializeField]
+    private Color kHealthyColor = Color.white;
+    [SerializeField]
+    private Color kInfectedColor = Color.blue;
+    [SerializeField]
+    private float kSecondsToBeInfected = 1;
+
+
+    public float cooldown = 1f;
+    public float cooldownTimer = 0;
     public bool infected = false;
 
+    public float percentInfected = 0;
 
-    public float infectionTime = 100;
+    public PercentBar mInfectionBar = null;
 
 
-    public MainController mainController;
+    private MainController mainController;
+    private CellManager cellManager;
+
+    [SerializeField]
+    private Sprite spriteHealthy = null;
+    [SerializeField]
+    private Sprite spriteInfected = null;
+
+    public ParticleSystem cellCuredParticleSystem = null;
+    public ParticleSystem cellInfectedParticleSystem = null;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
+        cellManager = GameObject.Find("CellManager").GetComponent<CellManager>();
         Debug.Assert(mainController != null);
+        Debug.Assert(cellManager != null);
 
         if (infected)
         {
             Infect();
-        }
-        else
-        {
-            Disinfect();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateInfectionStatus();
+        UpdateHealthDisplay();
         if (cooldownTimer > 0)
         {
             cooldownTimer -= Time.deltaTime;
         }
-        else if (infected)
+        else if (IsInfected())
         {
             SpawnVirus();
             cooldownTimer = cooldown;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Disinfect();
+        }
+    }
+
+    private void UpdateHealthDisplay()
+    {
+        mInfectionBar.SetValue(percentInfected);
+        GetComponent<Renderer>().material.color = Color.Lerp(kHealthyColor, kInfectedColor, percentInfected);
+    }
+
+    private void UpdateInfectionStatus()
+    {
+        percentInfected = Mathf.Clamp(percentInfected, 0, 1);
+        if (!infected && percentInfected == 1)
+        {
+            Infect();
+        }
+        else if (infected && percentInfected == 0)
+        {
+            Disinfect();
         }
     }
 
@@ -54,26 +98,43 @@ public class CellBehavior : MonoBehaviour
 
     public void Infect()
     {
-        GetComponent<Renderer>().material.color = Color.white;
+        percentInfected = 1;
         infected = true;
+        GetComponent<Renderer>().material.color = Color.white;
+        GetComponent<SpriteRenderer>().sprite = spriteInfected;
+        cellInfectedParticleSystem.Play();
+        cellManager.notifyOfInfectionChange(this);
     }
 
     public void Disinfect()
     {
-        GetComponent<Renderer>().material.color = Color.blue;
+        percentInfected = 0;
         infected = false;
+        GetComponent<Renderer>().material.color = Color.blue;
+        GetComponent<SpriteRenderer>().sprite = spriteHealthy;
+        cellCuredParticleSystem.Play();
+        cellManager.notifyOfInfectionChange(this);
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Disinfect();
+            percentInfected = 0;
         }
-        else if (collision.gameObject.CompareTag("Virus"))
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Virus"))
         {
-            Infect();
+            //Infect();
+            percentInfected += Time.deltaTime / kSecondsToBeInfected;
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            //Infect();
+            percentInfected -= Time.deltaTime / kSecondsToBeInfected;
         }
     }
 

@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject crosshairs;
     public float bulletSpeed = 15.0f;
+    public KeyCode trigger = KeyCode.None;
 
     public static float cooldown = .25f;
     public static float cooldownTimer = 0;
