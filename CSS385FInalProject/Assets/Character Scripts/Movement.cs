@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float mHeroSpeed = 5f;
-
+    public static float mHeroSpeed = 7f;
+    public static float sprintEnergy = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,26 @@ public class Movement : MonoBehaviour
         {
             transform.position += -transform.up * mHeroSpeed * Time.smoothDeltaTime;
         }
-        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (sprintEnergy > 0)
+            {
+                mHeroSpeed = 15f;
+                sprintEnergy -= 30 * Time.deltaTime;
+            }
+            else
+            {
+                mHeroSpeed = 5f;
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            mHeroSpeed = 5f;
+        }
+        if (sprintEnergy < 100)
+        {
+            sprintEnergy += 5 * Time.deltaTime;
+        }
     }
 
 }

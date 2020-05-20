@@ -15,6 +15,9 @@ public class Shoot : MonoBehaviour
     public static float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
 
+    public static bool wideShot = false;
+    public static bool rapidFire = false;
+
     public static int damage = 1;
     private Vector3 target;
     
@@ -46,12 +49,17 @@ public class Shoot : MonoBehaviour
         {
             if (cooldownTimer <= 0)
             {
-                if (powerUpCdTimer > 0)
+                if (wideShot && powerUpCdTimer > 0)
                 {
                     fireWide(difference, rotationZ);
                 }
-                else
+                if (rapidFire && powerUpCdTimer > 0)
                 {
+                    fireBullet(difference, rotationZ);
+                }
+                if (powerUpCdTimer <= 0)
+                {
+                    clearPowerUps();
                     fireBullet(difference, rotationZ);
                 }
                 SoundManagerScript.PlaySound("pow");
@@ -104,8 +112,10 @@ public class Shoot : MonoBehaviour
         Destroy(c.gameObject, 2);
     }
 
-    void rapidFire(Vector3 direction, float rotationZ)
+    private void clearPowerUps()
     {
-        
+        wideShot = false;
+        rapidFire = false;
+        cooldown = .25f;
     }
 }
