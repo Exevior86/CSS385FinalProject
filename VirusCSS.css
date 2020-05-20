@@ -2,6 +2,16 @@
     color:white;
     text-align: center;
 }
+#devlog {
+    color:white;
+    text-align: center;
+}
+#Webgl {
+    color:white;
+}
+#trailer {
+    color:white;
+}
 body {
     background-color: dimgray;
 }
