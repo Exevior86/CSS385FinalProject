@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public static float mHeroSpeed = 7f;
+    public static float mHeroSpeed = 15f;
     public static float sprintEnergy = 100;
     // Start is called before the first frame update
     void Start()
@@ -40,17 +40,17 @@ public class Movement : MonoBehaviour
         {
             if (sprintEnergy > 0)
             {
-                mHeroSpeed = 15f;
+                mHeroSpeed = 25f;
                 sprintEnergy -= 30 * Time.deltaTime;
             }
             else
             {
-                mHeroSpeed = 5f;
+                mHeroSpeed = 15f;
             }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            mHeroSpeed = 5f;
+            mHeroSpeed = 15f;
         }
         if (sprintEnergy < 100)
         {

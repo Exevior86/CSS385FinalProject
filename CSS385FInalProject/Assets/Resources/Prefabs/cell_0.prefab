@@ -9535,7 +9535,7 @@ Transform:
   m_GameObject: {fileID: 6043215517722820278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.41, y: -4.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6043215518287571856}
   - {fileID: 1703515130}
@@ -9607,10 +9607,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kHealthyColor: {r: 1, g: 1, b: 1, a: 1}
   kInfectedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  kSecondsToBeInfected: 4
-  cooldown: 2
+  kSecondsToBeInfected: 10
+  cooldown: 5
   cooldownTimer: 0
-  infected: 1
+  infected: 0
   percentInfected: 0
   mInfectionBar: {fileID: 5178802606301051661}
   spriteHealthy: {fileID: 2309948539982372331, guid: f1a819b4377599346b6a1383c7f0e533,
@@ -9650,7 +9650,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.08}

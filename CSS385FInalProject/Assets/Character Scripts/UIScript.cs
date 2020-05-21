@@ -18,7 +18,7 @@ public class UIScript : MonoBehaviour
 
     public void GotoGame()
     {
-        SceneManager.LoadScene("Scenes/UI/Prototype test");
+        SceneManager.LoadScene("Scenes/levelTest");
     }
 
     public void GotoIntro()
