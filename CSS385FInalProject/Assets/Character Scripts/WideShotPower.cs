@@ -10,10 +10,15 @@ public class WideShotPower : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Shoot.wideShot = true;
-            Shoot.powerUpCdTimer += cooldown;
-            SoundManagerScript.PlaySound("PowerUpSound");
-            Destroy(this.gameObject);
+            if (Shoot.wideShot || Shoot.rapidFire)
+                ;
+            else
+            {
+                Shoot.wideShot = true;
+                Shoot.powerUpCdTimer += cooldown;
+                SoundManagerScript.PlaySound("PowerUpSound");
+                Destroy(this.gameObject);
+            }
         }
     }
 }

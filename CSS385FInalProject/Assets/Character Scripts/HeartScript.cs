@@ -8,8 +8,14 @@ public class HeartScript : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            CharacterStats.health += 5;
-            Destroy(this.gameObject);
+            if (CharacterStats.health >= 5)
+                ;
+            else
+            {
+                CharacterStats.health += 5;
+                SoundManagerScript.PlaySound("HealthUp");
+                Destroy(this.gameObject);
+            }
         }
     }
 }

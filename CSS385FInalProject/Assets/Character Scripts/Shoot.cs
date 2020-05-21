@@ -11,7 +11,7 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed = 15.0f;
     public KeyCode trigger = KeyCode.None;
 
-    public static float cooldown = .125f;
+    public static float cooldown = .1f;
     public static float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
 
@@ -55,6 +55,7 @@ public class Shoot : MonoBehaviour
                 }
                 if (rapidFire && powerUpCdTimer > 0)
                 {
+                    bulletSpeed = 35;
                     fireBullet(difference, rotationZ);
                 }
                 if (powerUpCdTimer <= 0)
@@ -114,8 +115,9 @@ public class Shoot : MonoBehaviour
 
     private void clearPowerUps()
     {
+        bulletSpeed = 25;
         wideShot = false;
         rapidFire = false;
-        cooldown = .125f;
+        cooldown = .1f;
     }
 }

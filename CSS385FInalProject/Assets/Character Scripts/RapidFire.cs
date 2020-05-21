@@ -11,11 +11,17 @@ public class RapidFire : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            modifier = Shoot.cooldown * .5f;
-            Shoot.cooldown = Shoot.cooldown - modifier;
-            Shoot.rapidFire = true;
-            Shoot.powerUpCdTimer += cooldown;
-            Destroy(this.gameObject);
+            if (Shoot.rapidFire || Shoot.wideShot)
+                ;
+            else
+            {
+                modifier = Shoot.cooldown * .5f;
+                Shoot.cooldown = Shoot.cooldown - modifier;
+                Shoot.rapidFire = true;
+                SoundManagerScript.PlaySound("PowerUpSound");
+                Shoot.powerUpCdTimer += cooldown;
+                Destroy(this.gameObject);
+            }
         }
     }
 }

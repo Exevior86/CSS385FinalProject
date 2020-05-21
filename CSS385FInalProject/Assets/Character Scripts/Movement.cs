@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
         {
             if (sprintEnergy > 0)
             {
-                mHeroSpeed = 25f;
+                mHeroSpeed = 20f;
                 sprintEnergy -= 30 * Time.deltaTime;
             }
             else
