@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class HeartScript : MonoBehaviour
 {
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            if (CharacterStats.health >= 5)
+            if (LivesUI.lives >= 10)
                 ;
             else
             {
-                CharacterStats.health += 5;
+                LivesUI.lives += 5;
                 SoundManagerScript.PlaySound("HealthUp");
                 Destroy(this.gameObject);
             }

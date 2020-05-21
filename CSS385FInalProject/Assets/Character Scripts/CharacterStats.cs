@@ -21,6 +21,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Virus"))
         {
+            Debug.Log("Player Health = " + health);
             mainController.LowerLives();
         }
     }
