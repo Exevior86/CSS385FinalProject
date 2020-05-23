@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levelTest.unity
     guid: ed12360ea05272f45bfa48c32e4fde92
+  - enabled: 1
+    path: Assets/Scenes/UI/DefeatUI.unity
+    guid: 81f01924a59647840be50d3efa68a2d5
   m_configObjects: {}
