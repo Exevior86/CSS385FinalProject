@@ -2060,7 +2060,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2114546559
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ed8758bea2252544893ca293dac57a85, type: 3}
   m_Color: {r: 0.9528302, g: 0.5887772, b: 0.6412338, a: 1}
@@ -3079,7 +3079,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 144056267
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -4186569870743770075, guid: eaf7e072f9d2739459127b0a1dd82a0f,
     type: 3}
@@ -3605,7 +3605,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2114546559
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a3c1b3e558171248b5ebdb144fbfdc3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -6052,7 +6052,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 144056267
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a3c1b3e558171248b5ebdb144fbfdc3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -6144,7 +6144,8 @@ AudioSource:
   m_GameObject: {fileID: 1405058050}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 68bbca384d736934eb0c566cf8f8af9d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -6299,7 +6300,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2114546559
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a3c1b3e558171248b5ebdb144fbfdc3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -6744,7 +6745,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2114546559
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a3c1b3e558171248b5ebdb144fbfdc3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
