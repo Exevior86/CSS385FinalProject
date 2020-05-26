@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class LivesUI : MonoBehaviour
 {
     public static int lives = 10;
-    public Image bar;
-    public Text score;
     public static float scoreTime;
     private float percentageSubtract = 1f / 10f;
     private float startTime;
+
+    public Image bar;
+    public Text score;
     public Text enemies;
     public Text Bombs;
+    public Text killsNeeded;
 
     void Update()
     {
@@ -21,6 +23,7 @@ public class LivesUI : MonoBehaviour
         score.text = "Score: " + scoreTime;
         enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
         Bombs.text = "Bombs: " + Shoot.bombs;
+        killsNeeded.text = "Kills Needed: " + LevelController.killCount;
         FillLives();
     }
 
