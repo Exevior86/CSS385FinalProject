@@ -32,12 +32,10 @@ public class UIScript : MonoBehaviour
         {
             case 1:
                 LevelController.currentLevel++;
-                Debug.Log("Level = " + level);
                 SceneManager.LoadScene("Scenes/Level2A");
                 break;
             case 2:
                 LevelController.currentLevel++;
-                Debug.Log("Level = " + level);
                 SceneManager.LoadScene("Scenes/Level3A");
                 break;
             default:

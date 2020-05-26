@@ -11,7 +11,7 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateKillAmount();
     }
 
     // Update is called once per frame
@@ -21,8 +21,12 @@ public class LevelController : MonoBehaviour
         {
             SceneManager.LoadScene("Scenes/UI/WinUI");
             Cursor.visible = true;
+            UpdateKillAmount();
         }
     }
 
-
+    private void UpdateKillAmount()
+    {
+        killCount = killCount + (50 * currentLevel);
+    }
 }

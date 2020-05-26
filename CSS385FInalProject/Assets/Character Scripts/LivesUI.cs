@@ -9,9 +9,11 @@ public class LivesUI : MonoBehaviour
     public static int lives = 10;
     public static float scoreTime;
     private float percentageSubtract = 1f / 10f;
+    private float energyPercent = 1f / 100f;
     private float startTime;
 
     public Image bar;
+    public Image energyBar;
     public Text score;
     public Text enemies;
     public Text Bombs;
@@ -24,6 +26,8 @@ public class LivesUI : MonoBehaviour
         enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
         Bombs.text = "Bombs: " + Shoot.bombs;
         killsNeeded.text = "Kills Needed: " + LevelController.killCount;
+
+        FillEnergyBar();
         FillLives();
     }
 
@@ -42,8 +46,12 @@ public class LivesUI : MonoBehaviour
         else
         {
             lives--;
-           //bar.fillAmount = lives * percentageSubtract;
         }
+    }
+
+    public void FillEnergyBar()
+    {
+        energyBar.fillAmount = Movement.sprintEnergy * energyPercent;
     }
 
     public void FillLives()
