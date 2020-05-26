@@ -11,6 +11,8 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed = 15.0f;
     public KeyCode trigger = KeyCode.None;
 
+    public int bombs = 3;
+
     public static float cooldown = .1f;
     public static float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
@@ -45,7 +47,7 @@ public class Shoot : MonoBehaviour
         {
             cooldownTimer -= Time.deltaTime;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
         {
             if (cooldownTimer <= 0)
             {
@@ -63,10 +65,18 @@ public class Shoot : MonoBehaviour
                     clearPowerUps();
                     fireBullet(difference, rotationZ);
                 }
+
                 SoundManagerScript.PlaySound("pow");
                 cooldownTimer = cooldown;
             }
-           
+        }
+        if (Input.GetMouseButtonDown(1) || Input.GetKey(KeyCode.B))
+        {
+            if (bombs > 0)
+            {
+                clearScreen();
+                bombs--;
+            }
         }
     }
 
@@ -119,5 +129,24 @@ public class Shoot : MonoBehaviour
         wideShot = false;
         rapidFire = false;
         cooldown = .1f;
+    }
+
+    public float radius = 10f;
+
+    private void clearScreen()
+    {
+        Vector2 positionExplode = transform.position;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(positionExplode, radius);
+
+        foreach (Collider2D hit in colliders)
+        {
+            if (hit != null)
+            {
+                if (hit.CompareTag("Virus"))
+                {
+                    hit.gameObject.active = false;
+                }
+            }
+        }
     }
 }

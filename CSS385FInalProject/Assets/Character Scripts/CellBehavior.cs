@@ -63,7 +63,7 @@ public class CellBehavior : MonoBehaviour
             cooldownTimer = cooldown;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.K))
         {
             Disinfect();
         }
