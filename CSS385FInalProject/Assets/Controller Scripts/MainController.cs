@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainController : MonoBehaviour
 {
@@ -16,6 +17,19 @@ public class MainController : MonoBehaviour
     [SerializeField]
     private LivesUI mLivesUI = null;
 
+    [SerializeField]
+    private PlayerCloneController mCloneManager = null;
+
+    [SerializeField]
+    private UIScript mUIManager = null;
+
+    [SerializeField]
+    private Text enemyTargetText = null;
+    [SerializeField]
+    private Text enemiesKiledText = null;
+
+
+
     void Awake()
     {
         Debug.Assert(mVirusPool != null);
@@ -26,6 +40,12 @@ public class MainController : MonoBehaviour
     void Start()
     {
         Debug.Assert(mVirusPool != null);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+            CreateClone();
     }
 
     public bool SpawnVirus(Transform transform)
@@ -51,5 +71,30 @@ public class MainController : MonoBehaviour
     public void LowerLives()
     {
         mLivesUI.LowerLives();
+    }
+
+    public bool CreateClone()
+    {
+        return mCloneManager.CreateClone(mPlayer.transform);
+    }
+
+    public void DeleteClone()
+    {
+        mCloneManager.DeleteClone();
+    }
+
+    public int GetNumberOfEnemiesKilled()
+    {
+        return ScoreScript.VirusKilled;
+    }
+
+    public int GetNumberOfClones()
+    {
+        return mCloneManager.GetNumberOfClones();
+    }
+
+    public void SetEnemyTarget(int target)
+    {
+        //enemyTargetText.text = target.ToString();
     }
 }
