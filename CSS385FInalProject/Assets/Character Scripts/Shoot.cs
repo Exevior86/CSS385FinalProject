@@ -11,8 +11,7 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed = 15.0f;
     public KeyCode trigger = KeyCode.None;
 
-    public int bombs = 3;
-
+    public static int bombs = 3;
     public static float cooldown = .1f;
     public static float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
@@ -70,7 +69,7 @@ public class Shoot : MonoBehaviour
                 cooldownTimer = cooldown;
             }
         }
-        if (Input.GetMouseButtonDown(1) || Input.GetKey(KeyCode.B))
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.B))
         {
             if (bombs > 0)
             {
@@ -145,6 +144,7 @@ public class Shoot : MonoBehaviour
                 if (hit.CompareTag("Virus"))
                 {
                     hit.gameObject.active = false;
+                    ScoreScript.VirusKilled++;
                 }
             }
         }
