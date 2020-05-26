@@ -60,4 +60,9 @@ public class CellManager : MonoBehaviour
             numberOfCellsInfected--;
         }
     }
+
+    public int GetNumberOfCellsInfected()
+    {
+        return numberOfCellsInfected;
+    }
 }
