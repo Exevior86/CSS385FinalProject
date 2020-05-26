@@ -143,8 +143,7 @@ public class Shoot : MonoBehaviour
             {
                 if (hit.CompareTag("Virus"))
                 {
-                    hit.gameObject.active = false;
-                    ScoreScript.VirusKilled++;
+                    hit.gameObject.GetComponent<VirusBehavior>().Kill();
                 }
             }
         }

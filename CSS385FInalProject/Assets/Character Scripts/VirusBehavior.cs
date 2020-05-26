@@ -74,10 +74,12 @@ public class VirusBehavior : MonoBehaviour
         mMovement.SetToTarget(mTarget);
     }
 
-    private void Kill()
+    public void Kill()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        virusKillParticleSystem.Play();
+        virusKillParticleSystem2.Play();
         mDestroyed = true;
         ScoreScript.VirusKilled++;
         CharacterStats.enemiesDestroyed += 1;
@@ -87,7 +89,6 @@ public class VirusBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            virusKillParticleSystem.Play();
             virusKillParticleSystem2.Play();
             mCurrentHealth -= Shoot.damage;
             if (mCurrentHealth <= 0)

@@ -46,13 +46,6 @@ public class MainController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
             CreateClone();
-
-        if (mCellManager.GetNumberOfCellsInfected() == 0 || Input.GetKeyDown(KeyCode.G))
-        {
-            mUIManager.GotoNextLevel();
-        }
-
-        enemiesKiledText.text = GetNumberOfEnemiesKilled().ToString();
     }
 
     public bool SpawnVirus(Transform transform)
@@ -102,6 +95,6 @@ public class MainController : MonoBehaviour
 
     public void SetEnemyTarget(int target)
     {
-        enemyTargetText.text = target.ToString();
+        //enemyTargetText.text = target.ToString();
     }
 }
