@@ -7,12 +7,11 @@ public class Shoot : MonoBehaviour
    // public GameObject crosshairs;
     public GameObject player;
     public GameObject bulletPrefab;
-    public GameObject crosshairs;
+    public static GameObject crosshairs;
     public float bulletSpeed = 15.0f;
-    public KeyCode trigger = KeyCode.None;
 
     public static float cooldown = .1f;
-    public static float cooldownTimer = 0;
+    public float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
 
     public static bool wideShot = false;
@@ -24,6 +23,7 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        crosshairs = GameObject.Find("CrossHairs 1");
         Cursor.visible = false;
     }
 

@@ -9580,7 +9580,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2309948539982372331, guid: f1a819b4377599346b6a1383c7f0e533,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9610,7 +9610,7 @@ MonoBehaviour:
   kSecondsToBeInfected: 10
   cooldown: 5
   cooldownTimer: 0
-  infected: 0
+  infected: 1
   percentInfected: 0
   mInfectionBar: {fileID: 5178802606301051661}
   spriteHealthy: {fileID: 2309948539982372331, guid: f1a819b4377599346b6a1383c7f0e533,

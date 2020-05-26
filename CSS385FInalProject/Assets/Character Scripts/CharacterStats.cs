@@ -8,12 +8,13 @@ public class CharacterStats : MonoBehaviour
     public static int health = 5;
     public static int score = 0;
 
-    public MainController mainController = null;
+    private MainController mainController = null;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mainController != null);
     }
 
