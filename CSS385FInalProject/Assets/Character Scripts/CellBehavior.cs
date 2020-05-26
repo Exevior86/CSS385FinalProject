@@ -108,6 +108,7 @@ public class CellBehavior : MonoBehaviour
 
     public void Disinfect()
     {
+        ScoreScript.CellsCured++;
         percentInfected = 0;
         infected = false;
         GetComponent<Renderer>().material.color = Color.blue;
