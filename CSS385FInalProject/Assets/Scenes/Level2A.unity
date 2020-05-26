@@ -1833,50 +1833,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 411922542}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &433976621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 433976623}
-  - component: {fileID: 433976622}
-  m_Layer: 0
-  m_Name: AntibodyPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &433976622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433976621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c938f46d84214ab4cba5e94371a0cdf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mPoolSize: 1000
---- !u!4 &433976623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433976621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.09988, y: 1.7627977, z: -55.053005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &447958541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2440,12 +2396,6 @@ PrefabInstance:
 --- !u!4 &762960688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8731767920214755511, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
-    type: 3}
-  m_PrefabInstance: {fileID: 762960687}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &762960689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6336677712226214956, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
     type: 3}
   m_PrefabInstance: {fileID: 762960687}
   m_PrefabAsset: {fileID: 0}
@@ -4519,7 +4469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainController: {fileID: 1639360600}
 --- !u!61 &1335022680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4594,9 +4543,8 @@ MonoBehaviour:
   player: {fileID: 1335022677}
   bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
     type: 3}
-  crosshairs: {fileID: 762960689}
   bulletSpeed: 25
-  trigger: 0
+  cooldownTimer: 0
   radius: 100
 --- !u!212 &1335022684
 SpriteRenderer:
@@ -5381,7 +5329,11 @@ MonoBehaviour:
   mVirusPool: {fileID: 1326961395}
   mCellManager: {fileID: 879078725}
   mPlayer: {fileID: 1335022677}
-  mLivesUI: {fileID: 0}
+  mLivesUI: {fileID: 2100904840}
+  mCloneManager: {fileID: 0}
+  mUIManager: {fileID: 0}
+  enemyTargetText: {fileID: 0}
+  enemiesKiledText: {fileID: 0}
 --- !u!4 &1639360601
 Transform:
   m_ObjectHideFlags: 0
@@ -6286,7 +6238,7 @@ RectTransform:
   - {fileID: 1666619211}
   - {fileID: 1389627133}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
