@@ -2308,6 +2308,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6653418176426610909, guid: 81a750f9693a09841b70ee5fdd90902a,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 68bbca384d736934eb0c566cf8f8af9d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a750f9693a09841b70ee5fdd90902a, type: 3}
 --- !u!4 &461938960 stripped
