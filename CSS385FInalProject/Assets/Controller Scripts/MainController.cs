@@ -95,6 +95,7 @@ public class MainController : MonoBehaviour
 
     public void SetEnemyTarget(int target)
     {
-        //enemyTargetText.text = target.ToString();
+        enemyTargetText.text = "Kills till upgrade: " + target.ToString();
+        Debug.Log("Being Called in SetEnemyTarget()");
     }
 }

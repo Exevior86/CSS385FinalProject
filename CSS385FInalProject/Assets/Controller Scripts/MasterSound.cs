@@ -11,4 +11,5 @@ public class MasterSound : MonoBehaviour
     {
         mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue)*20);
     }
+
 }

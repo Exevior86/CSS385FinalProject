@@ -611,10 +611,12 @@
     <Compile Include="Assets\Character Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Character Scripts\CellBehavior.cs" />
     <Compile Include="Assets\Character Scripts\CharacterStats.cs" />
+    <Compile Include="Assets\Character Scripts\FollowMovement.cs" />
     <Compile Include="Assets\Character Scripts\HeartScript.cs" />
     <Compile Include="Assets\Character Scripts\LivesUI.cs" />
     <Compile Include="Assets\Character Scripts\Movement.cs" />
     <Compile Include="Assets\Character Scripts\RapidFire.cs" />
+    <Compile Include="Assets\Character Scripts\ScoreScript.cs" />
     <Compile Include="Assets\Character Scripts\Shoot.cs" />
     <Compile Include="Assets\Character Scripts\SwimMovement.cs" />
     <Compile Include="Assets\Character Scripts\SwimTemporaryWander.cs" />
@@ -622,20 +624,42 @@
     <Compile Include="Assets\Character Scripts\VirusBehavior.cs" />
     <Compile Include="Assets\Character Scripts\WideShotPower.cs" />
     <Compile Include="Assets\Controller Scripts\CellManager.cs" />
+    <Compile Include="Assets\Controller Scripts\LevelController.cs" />
     <Compile Include="Assets\Controller Scripts\MainController.cs" />
+    <Compile Include="Assets\Controller Scripts\MasterSound.cs" />
     <Compile Include="Assets\Controller Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Controller Scripts\PercentBar.cs" />
+    <Compile Include="Assets\Controller Scripts\PlayerCloneController.cs" />
     <Compile Include="Assets\Controller Scripts\SoundManagerScript.cs" />
+    <Compile Include="Assets\Controller Scripts\UpgradeManager.cs" />
     <Compile Include="Assets\score.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryCommon.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryDark.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryLight.uss" />
+    <None Include="Packages\com.unity.collab-proxy\Editor\Unity.CollabProxy.Editor.asmdef" />
+    <None Include="Packages\com.unity.collab-proxy\Tests\Editor\Unity.CollabProxy.EditorTests.asmdef" />
     <None Include="Packages\com.unity.ext.nunit\net35\unity-custom\This is a custom build DONT include.txt" />
     <None Include="Packages\com.unity.ext.nunit\net35\unity-custom\nunit.framework.xml" />
+    <None Include="Packages\com.unity.ide.rider\Rider\Editor\com.unity.ide.rider.asmdef" />
+    <None Include="Packages\com.unity.ide.vscode\Editor\Unity.com.unity.vscode.Editor.asmdef" />
+    <None Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\UnityEditor.TestRunner.asmdef" />
+    <None Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\UnityEngine.TestRunner.asmdef" />
     <None Include="Packages\com.unity.textmeshpro\Editor Resources\Shaders\TMP_Properties.cginc" />
     <None Include="Packages\com.unity.textmeshpro\Editor Resources\Shaders\TMP_SDF Internal SSD.shader" />
+    <None Include="Packages\com.unity.textmeshpro\Scripts\Editor\Unity.TextMeshPro.Editor.asmdef" />
+    <None Include="Packages\com.unity.textmeshpro\Scripts\Runtime\Unity.TextMeshPro.asmdef" />
+    <None Include="Packages\com.unity.textmeshpro\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef" />
+    <None Include="Packages\com.unity.textmeshpro\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef" />
+    <None Include="Packages\com.unity.timeline\Editor\Unity.Timeline.Editor.asmdef" />
+    <None Include="Packages\com.unity.timeline\Runtime\Unity.Timeline.asmdef" />
+    <None Include="Packages\com.unity.timeline\Tests\Editor\Unity.Timeline.Package.EditorTests.asmdef" />
+    <None Include="Packages\com.unity.timeline\Tests\PlayMode\Unity.Timeline.Package.Tests.asmdef" />
+    <None Include="Packages\com.unity.ugui\Editor\UnityEditor.UI.asmdef" />
+    <None Include="Packages\com.unity.ugui\Runtime\UnityEngine.UI.asmdef" />
+    <None Include="Packages\com.unity.ugui\Tests\Editor\UnityEditor.UI.EditorTests.asmdef" />
+    <None Include="Packages\com.unity.ugui\Tests\Runtime\UnityEngine.UI.Tests.asmdef" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

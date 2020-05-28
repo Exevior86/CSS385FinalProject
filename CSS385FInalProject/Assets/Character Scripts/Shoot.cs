@@ -17,15 +17,18 @@ public class Shoot : MonoBehaviour
 
     public static bool wideShot = false;
     public static bool rapidFire = false;
-
+    public static int shield = 0;
     public static int damage = 1;
     private Vector3 target;
-    
+
+    private MainController mainController = null;
+
     // Start is called before the first frame update
     void Start()
     {
         crosshairs = GameObject.Find("CrossHairs 1");
-        Cursor.visible = false;
+        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
+        Debug.Assert(mainController != null);
     }
 
     // Update is called once per frame
@@ -76,6 +79,11 @@ public class Shoot : MonoBehaviour
                 clearScreen();
                 bombs--;
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            ScoreScript.VirusKilled += 10000;
         }
     }
 
@@ -146,6 +154,19 @@ public class Shoot : MonoBehaviour
                     hit.gameObject.GetComponent<VirusBehavior>().Kill();
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Virus"))
+        {
+            if(shield > 0)
+            {
+                shield--;
+            }
+            else
+                mainController.LowerLives();
         }
     }
 }

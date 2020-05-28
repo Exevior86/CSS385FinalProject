@@ -1455,6 +1455,10 @@ MonoBehaviour:
   mCellManager: {fileID: 1991895568}
   mPlayer: {fileID: 2054086956}
   mLivesUI: {fileID: 855558565}
+  mCloneManager: {fileID: 0}
+  mUIManager: {fileID: 0}
+  enemyTargetText: {fileID: 0}
+  enemiesKiledText: {fileID: 0}
 --- !u!4 &553325263
 Transform:
   m_ObjectHideFlags: 0
@@ -2380,6 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184d957683260da4f9d88e8405bc4f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldEnergy: {fileID: 0}
   bar: {fileID: 1118178563}
   energyBar: {fileID: 650401041}
   score: {fileID: 1182904394}
@@ -3278,7 +3283,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 825be8eb6d250404daeb2fb718edca35, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f75fe99f0d777754d9be48fba138caf4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3822,7 +3827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3864,7 +3869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5658988, y: 0.055833712}
   m_AnchorMax: {x: 0.912826, y: 0.12822092}
-  m_AnchoredPosition: {x: 61, y: -17}
+  m_AnchoredPosition: {x: 61.8, y: -13.8}
   m_SizeDelta: {x: 1, y: -0.022003174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1213598473
@@ -4278,12 +4283,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7eab8469f8b6c04ea3d08cf0e0a6354, type: 3}
---- !u!1 &1246613984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6336677712226214956, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
-    type: 3}
-  m_PrefabInstance: {fileID: 1246613983}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1246613985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8731767920214755511, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
@@ -7717,7 +7716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainController: {fileID: 553325262}
 --- !u!61 &2054086958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7792,9 +7790,8 @@ MonoBehaviour:
   player: {fileID: 2054086956}
   bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
     type: 3}
-  crosshairs: {fileID: 1246613984}
   bulletSpeed: 25
-  trigger: 0
+  cooldownTimer: 0
   radius: 100
 --- !u!212 &2054086962
 SpriteRenderer:
