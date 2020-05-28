@@ -658,7 +658,8 @@ AudioSource:
   m_GameObject: {fileID: 190145483}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 68bbca384d736934eb0c566cf8f8af9d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1455,6 +1456,10 @@ MonoBehaviour:
   mCellManager: {fileID: 1991895568}
   mPlayer: {fileID: 2054086956}
   mLivesUI: {fileID: 855558565}
+  mCloneManager: {fileID: 0}
+  mUIManager: {fileID: 0}
+  enemyTargetText: {fileID: 0}
+  enemiesKiledText: {fileID: 0}
 --- !u!4 &553325263
 Transform:
   m_ObjectHideFlags: 0
@@ -4278,12 +4283,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7eab8469f8b6c04ea3d08cf0e0a6354, type: 3}
---- !u!1 &1246613984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6336677712226214956, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
-    type: 3}
-  m_PrefabInstance: {fileID: 1246613983}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1246613985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8731767920214755511, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
@@ -7717,7 +7716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainController: {fileID: 553325262}
 --- !u!61 &2054086958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7792,9 +7790,8 @@ MonoBehaviour:
   player: {fileID: 2054086956}
   bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
     type: 3}
-  crosshairs: {fileID: 1246613984}
   bulletSpeed: 25
-  trigger: 0
+  cooldownTimer: 0
   radius: 100
 --- !u!212 &2054086962
 SpriteRenderer:
