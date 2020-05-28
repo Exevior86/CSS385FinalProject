@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                mHeroSpeed = 15f;
+                mHeroSpeed = 12f;
             }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))

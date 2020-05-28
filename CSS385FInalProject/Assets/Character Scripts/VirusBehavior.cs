@@ -82,7 +82,6 @@ public class VirusBehavior : MonoBehaviour
         virusKillParticleSystem2.Play();
         mDestroyed = true;
         ScoreScript.VirusKilled++;
-        CharacterStats.enemiesDestroyed += 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

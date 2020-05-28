@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
-    int level = LevelController.currentLevel;
+    public static int level = LevelController.currentLevel;
+
     public void GotoSettings()
     {
         SceneManager.LoadScene("Scenes/UI/Settings");
@@ -18,31 +19,57 @@ public class UIScript : MonoBehaviour
 
     public void GotoGame()
     {
-        SceneManager.LoadScene("Scenes/levelTest");
+        ResetCharacter();
+        SceneManager.LoadScene("Scenes/Level1A");
     }
 
     public void GotoIntro()
     {
+        level = 0;
         SceneManager.LoadScene("Scenes/UI/Intro UI");
     }
 
     public void ChangeLevel()
     {
+        ResetCharacter();
+        Cursor.visible = false;
         switch (level)
         {
+            case 0:
+                SceneManager.LoadScene("Scenes/Level1A");
+                break;
             case 1:
-                LevelController.currentLevel++;
-                SceneManager.LoadScene("Scenes/Level2A");
+                SceneManager.LoadScene("Scenes/Level2A");       
                 break;
             case 2:
-                LevelController.currentLevel++;
                 SceneManager.LoadScene("Scenes/Level3A");
+                break;
+            case 3:
+                SceneManager.LoadScene("Scenes/Hunt");
                 break;
             default:
                 LevelController.currentLevel = 1;
-                SceneManager.LoadScene("Scenes/UI/Intro UI");
+                Cursor.visible = true;
+                GotoIntro();
                 break;
         }
       
+    }
+
+    public void ResetCharacter()
+    {
+        LivesUI.lives = 10;
+        ScoreScript.CellsCured = 0;
+        ScoreScript.VirusKilled = 0;
+        Shoot.bombs = 3;
+        Shoot.wideShot = false;
+        Shoot.rapidFire = false;
+        Movement.sprintEnergy = 100;
+
+    }
+
+    public void SetSound()
+    {
+
     }
 }

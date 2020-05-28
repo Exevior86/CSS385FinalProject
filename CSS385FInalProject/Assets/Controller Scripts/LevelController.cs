@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    public static int killCount = 100;
-    public static int currentLevel = 1;
+    public static int killCount = 0;
+    public static int currentLevel = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +19,15 @@ public class LevelController : MonoBehaviour
     {
         if(ScoreScript.VirusKilled >= killCount)
         {
-            SceneManager.LoadScene("Scenes/UI/WinUI");
             Cursor.visible = true;
+            UIScript.level++;
+            SceneManager.LoadScene("Scenes/UI/WinUI");
             UpdateKillAmount();
         }
     }
 
     private void UpdateKillAmount()
     {
-        killCount = killCount + (50 * currentLevel);
+        killCount = killCount + 50 + (50 * currentLevel);
     }
 }

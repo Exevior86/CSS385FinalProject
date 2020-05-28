@@ -12,6 +12,7 @@ public class LivesUI : MonoBehaviour
     private float energyPercent = 1f / 100f;
     private float startTime;
 
+    public Image shieldEnergy;
     public Image bar;
     public Image energyBar;
     public Text score;
@@ -29,18 +30,19 @@ public class LivesUI : MonoBehaviour
 
         FillEnergyBar();
         FillLives();
+        FillShield();
     }
 
     void Start()
     {
         startTime = Time.time;
-        ClearStats();
     }
 
     public void LowerLives()
     {
         if (lives <= 1)
         {
+            Cursor.visible = true;
             SceneManager.LoadScene("Scenes/UI/DefeatUI");
         }
         else
@@ -59,9 +61,8 @@ public class LivesUI : MonoBehaviour
         bar.fillAmount = lives * percentageSubtract;
     }
 
-    private void ClearStats()
+    public void FillShield()
     {
-        ScoreScript.VirusKilled = 0;
-        ScoreScript.CellsCured = 0;
+        shieldEnergy.fillAmount = Shoot.shield * percentageSubtract;
     }
 }
