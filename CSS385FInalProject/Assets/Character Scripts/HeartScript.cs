@@ -15,8 +15,14 @@ public class HeartScript : MonoBehaviour
             {
                 LivesUI.lives += 5;
                 SoundManagerScript.PlaySound("HealthUp");
+                SpawnPowerup();
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void SpawnPowerup()
+    {
+        PowerupManager.Spawn("Prefabs/Health", transform.position);
     }
 }

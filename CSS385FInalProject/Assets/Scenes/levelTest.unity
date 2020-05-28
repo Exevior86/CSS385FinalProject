@@ -622,12 +622,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fe7215eb37cc842a90cf82d0ac39fe, type: 3}
---- !u!1 &183280314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6336677712226214956, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
-    type: 3}
-  m_PrefabInstance: {fileID: 6185998331643266636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &184439553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1746,7 +1740,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 992749579}
+  energyBar: {fileID: 0}
   score: {fileID: 460320412}
+  enemies: {fileID: 0}
+  Bombs: {fileID: 0}
+  killsNeeded: {fileID: 0}
 --- !u!114 &429715682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,7 +3010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainController: {fileID: 851466931}
 --- !u!114 &762465465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3040,9 +3037,9 @@ MonoBehaviour:
   player: {fileID: 762465463}
   bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
     type: 3}
-  crosshairs: {fileID: 183280314}
   bulletSpeed: 25
-  trigger: 0
+  cooldownTimer: 0
+  radius: 10
 --- !u!212 &762465467
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3777,6 +3774,10 @@ MonoBehaviour:
   mCellManager: {fileID: 1716811884}
   mPlayer: {fileID: 762465463}
   mLivesUI: {fileID: 429715681}
+  mCloneManager: {fileID: 0}
+  mUIManager: {fileID: 0}
+  enemyTargetText: {fileID: 0}
+  enemiesKiledText: {fileID: 0}
 --- !u!4 &851466932
 Transform:
   m_ObjectHideFlags: 0
@@ -3790,6 +3791,7 @@ Transform:
   m_Children:
   - {fileID: 2083974725}
   - {fileID: 1716811885}
+  - {fileID: 1655236626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7364,6 +7366,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1721858475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1655236625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655236626}
+  - component: {fileID: 1655236627}
+  m_Layer: 0
+  m_Name: PowerupManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655236626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655236625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 851466932}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655236627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655236625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55a9ad627472854fbd8b4be63fe5e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 10
 --- !u!1001 &1659158012
 PrefabInstance:
   m_ObjectHideFlags: 0
