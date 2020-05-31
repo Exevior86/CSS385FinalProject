@@ -40,13 +40,15 @@ public class LivesUI : MonoBehaviour
 
     public void LowerLives()
     {
-        if (lives <= 1)
+        if (lives <= 0)
         {
+            SoundManagerScript.PlaySound("Death");
             Cursor.visible = true;
             SceneManager.LoadScene("Scenes/UI/DefeatUI");
         }
         else
         {
+            SoundManagerScript.PlaySound("TakeDamage");
             lives--;
         }
     }

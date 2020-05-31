@@ -387,12 +387,12 @@ PrefabInstance:
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.1
+      value: 66.9
       objectReference: {fileID: 0}
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.6
+      value: -19.4
       objectReference: {fileID: 0}
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
@@ -508,12 +508,12 @@ PrefabInstance:
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.3
+      value: -14.3
       objectReference: {fileID: 0}
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55.5
+      value: 54.5
       objectReference: {fileID: 0}
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
@@ -1981,7 +1981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainController: {fileID: 0}
 --- !u!61 &295960856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8488,12 +8487,12 @@ PrefabInstance:
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.9
+      value: 63.9
       objectReference: {fileID: 0}
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55.6
+      value: 54.8
       objectReference: {fileID: 0}
     - target: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
         type: 3}
@@ -9856,7 +9855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c938f46d84214ab4cba5e94371a0cdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mPoolSize: 30
+  mPoolSize: 50
 --- !u!4 &1999099936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,

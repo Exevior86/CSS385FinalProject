@@ -163,6 +163,7 @@ public class Shoot : MonoBehaviour
         {
             if(shield > 0)
             {
+                SoundManagerScript.PlaySound("TakeDamage");
                 shield--;
             }
             else
