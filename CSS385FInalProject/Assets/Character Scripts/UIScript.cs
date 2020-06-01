@@ -67,9 +67,4 @@ public class UIScript : MonoBehaviour
         Movement.sprintEnergy = 100;
 
     }
-
-    public void SetSound()
-    {
-
-    }
 }

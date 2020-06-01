@@ -19,6 +19,7 @@ public class LevelController : MonoBehaviour
     {
         if(ScoreScript.VirusKilled >= killCount)
         {
+            SoundManagerScript.PlaySound("WinningSound");
             Cursor.visible = true;
             UIScript.level++;
             SceneManager.LoadScene("Scenes/UI/WinUI");

@@ -92,6 +92,7 @@ public class VirusBehavior : MonoBehaviour
             mCurrentHealth -= Shoot.damage;
             if (mCurrentHealth <= 0)
             {
+                SoundManagerScript.PlaySound("VirusDie");
                 Kill();
             }
             Destroy(collision.gameObject);

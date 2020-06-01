@@ -84,6 +84,7 @@ public class CellBehavior : MonoBehaviour
         }
         else if (infected && percentInfected == 0)
         {
+            SoundManagerScript.PlaySound("CellCure");
             Disinfect();
         }
     }
