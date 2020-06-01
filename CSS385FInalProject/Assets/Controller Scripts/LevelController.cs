@@ -17,13 +17,13 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ScoreScript.VirusKilled >= killCount)
-        {
-            Cursor.visible = true;
-            UIScript.level++;
-            SceneManager.LoadScene("Scenes/UI/WinUI");
-            UpdateKillAmount();
-        }
+        //if(ScoreScript.VirusKilled >= killCount)
+        //{
+        //    Cursor.visible = true;
+        //    UIScript.level++;
+        //    SceneManager.LoadScene("Scenes/UI/WinUI");
+        //    UpdateKillAmount();
+        //}
     }
 
     private void UpdateKillAmount()

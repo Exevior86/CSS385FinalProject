@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LivesUI : MonoBehaviour
@@ -11,6 +10,9 @@ public class LivesUI : MonoBehaviour
     private float percentageSubtract = 1f / 10f;
     private float energyPercent = 1f / 100f;
     private float startTime;
+
+    [SerializeField]
+    private MainController mainController = null;
 
     public Image shieldEnergy;
     public Image bar;
@@ -22,6 +24,8 @@ public class LivesUI : MonoBehaviour
 
     void Update()
     {
+        Debug.Assert(mainController != null);
+
         scoreTime = Time.time - startTime;
         score.text = "Score: " + scoreTime;
         enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
@@ -42,8 +46,7 @@ public class LivesUI : MonoBehaviour
     {
         if (lives <= 1)
         {
-            Cursor.visible = true;
-            SceneManager.LoadScene("Scenes/UI/DefeatUI");
+            mainController.SignalDefeat();
         }
         else
         {
