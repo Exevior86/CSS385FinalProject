@@ -40,7 +40,7 @@ public class LivesUI : MonoBehaviour
 
     public void LowerLives()
     {
-        if (lives <= 0)
+        if (lives <= 1)
         {
             SoundManagerScript.PlaySound("Death");
             Cursor.visible = true;
