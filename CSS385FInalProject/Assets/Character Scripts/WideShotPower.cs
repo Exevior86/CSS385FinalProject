@@ -17,7 +17,7 @@ public class WideShotPower : MonoBehaviour
                 Shoot.wideShot = true;
                 Shoot.powerUpCdTimer += cooldown;
                 SoundManagerScript.PlaySound("PowerUpSound");
-                SpawnPowerup();
+                //SpawnPowerup();
                 Destroy(this.gameObject);
             }
         }

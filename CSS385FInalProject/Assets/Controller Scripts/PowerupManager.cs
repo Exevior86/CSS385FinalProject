@@ -10,7 +10,7 @@ public class PowerupManager : MonoBehaviour
     private static string newpowerup;
     private static Vector3 newpos;
     private static PowerupManager instance;
-    private float currentTime;
+    private int currentKills;
 
     void Awake()
     {
@@ -19,12 +19,18 @@ public class PowerupManager : MonoBehaviour
 
     void Update()
     {
-        //Determine how much are wanted
-        //determine time intervals to create
-        //currentTime = Time.deltaTime;
-        int wide = (ScoreScript.VirusKilled + 1) % 7;
-        int rapid = (ScoreScript.VirusKilled + 1) % 11;
-        int heart = (ScoreScript.VirusKilled + 1) % 13;
+        if (currentKills != ScoreScript.VirusKilled)
+        {
+            currentKills = ScoreScript.VirusKilled;
+            SpawnCheck();
+        }    
+    }
+
+    void SpawnCheck()
+    {
+        int wide = (ScoreScript.VirusKilled + 1) %29;
+        int rapid = (ScoreScript.VirusKilled + 1) % 31;
+        int heart = (ScoreScript.VirusKilled + 1) % 41;
         newpos = player.transform.position;
         if (wide == 0)
         {

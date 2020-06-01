@@ -20,7 +20,7 @@ public class RapidFire : MonoBehaviour
                 Shoot.rapidFire = true;
                 SoundManagerScript.PlaySound("PowerUpSound");
                 Shoot.powerUpCdTimer += cooldown;
-                SpawnPowerup();
+                //SpawnPowerup();
                 Destroy(this.gameObject);
             }
         }
