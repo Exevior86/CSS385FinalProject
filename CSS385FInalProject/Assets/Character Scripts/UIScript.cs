@@ -30,6 +30,13 @@ public class UIScript : MonoBehaviour
         SceneManager.LoadScene("Scenes/UI/Intro UI");
     }
 
+    public void GotoSurvival()
+    {
+        level = 6;
+        Cursor.visible = false;
+        SceneManager.LoadScene("Scenes/LevelSurvival");
+    }
+
     public void ChangeLevel()
     {
         ResetCharacter();
@@ -49,6 +56,7 @@ public class UIScript : MonoBehaviour
             //    SceneManager.LoadScene("Scenes/Hunt");
             //    break;
             default:
+                LevelController.killCount = 75;
                 level = 1;
                 Cursor.visible = true;
                 GotoIntro();
