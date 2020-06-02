@@ -145,6 +145,8 @@ public class Shoot : MonoBehaviour
         Vector2 positionExplode = transform.position;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(positionExplode, radius);
 
+        SoundManagerScript.PlaySound("Kaboom");
+
         foreach (Collider2D hit in colliders)
         {
             if (hit != null)

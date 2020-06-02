@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class MasterSound : MonoBehaviour
 {
-    public AudioMixer mixer;
     public GameObject slider;
     private static float value = .5f;
-
-    void Update()
+    private void Start()
     {
         slider.GetComponent<Slider>().value = value;
+    }
+    void Update()
+    {
         AudioListener.volume = value;
     }
 

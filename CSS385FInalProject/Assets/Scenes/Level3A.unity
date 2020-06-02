@@ -3730,8 +3730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55a9ad627472854fbd8b4be63fe5e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 10
-  player: {fileID: 0}
+  timer: 20
+  player: {fileID: 2054086956}
 --- !u!1001 &996246242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7373,7 +7373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c938f46d84214ab4cba5e94371a0cdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mPoolSize: 100
+  mPoolSize: 120
 --- !u!1 &1656577609
 GameObject:
   m_ObjectHideFlags: 0

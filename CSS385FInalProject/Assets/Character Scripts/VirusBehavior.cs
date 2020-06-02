@@ -5,9 +5,9 @@ using UnityEngine;
 public class VirusBehavior : MonoBehaviour
 {
     public int mMaxHealth = 2;
-    private int mCurrentHealth = 2;
+    private int mCurrentHealth = 1;
     public static int damage = 1;
-    public float mProbabilityOfTargetingPlayer = 0.05f;
+    public float mProbabilityOfTargetingPlayer = 0.25f;
     public Transform mTarget;
     public MainController mMainController;
     public SwimMovement mMovement;
@@ -26,6 +26,8 @@ public class VirusBehavior : MonoBehaviour
     {
         mMainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mMainController != null);
+        mCurrentHealth = mCurrentHealth * LevelController.difficulty;
+        mMaxHealth = mMaxHealth * LevelController.difficulty;
     }
 
     void OnEnable()

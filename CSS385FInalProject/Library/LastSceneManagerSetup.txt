@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Scenes/UI/instructions.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/UI/instructions.unity
+=======
+- path: Assets/Scenes/UI/Settings.unity
+>>>>>>> db7b9607f47afbd57aa7e738b2dcbf4894753cec
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0

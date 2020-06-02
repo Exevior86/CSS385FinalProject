@@ -9654,7 +9654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mMaxHealth: 2
-  mProbabilityOfTargetingPlayer: 0.15
+  mProbabilityOfTargetingPlayer: 0.25
   mTarget: {fileID: 0}
   mMainController: {fileID: 0}
   mMovement: {fileID: 3581559535759447594}
@@ -9672,7 +9672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da74bdef60cac4d96c78c1bb449e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpeed: 5
+  mSpeed: 7
   mDirectionNoiseStrength: 1
   kTimeUntilNextDirectionChange: 2
   mSecondsBetweenDirectionChecks: 0

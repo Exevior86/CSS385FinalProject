@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
-    public static int level = LevelController.currentLevel;
+    public static int level = 1;
 
     public void GotoSettings()
     {
@@ -19,13 +19,14 @@ public class UIScript : MonoBehaviour
 
     public void GotoGame()
     {
+        Cursor.visible = false;
         ResetCharacter();
         SceneManager.LoadScene("Scenes/Level1A");
     }
 
     public void GotoIntro()
     {
-        level = 0;
+        level = 1;
         SceneManager.LoadScene("Scenes/UI/Intro UI");
     }
 
@@ -35,20 +36,20 @@ public class UIScript : MonoBehaviour
         Cursor.visible = false;
         switch (level)
         {
-            case 0:
+            case 1:
                 SceneManager.LoadScene("Scenes/Level1A");
                 break;
-            case 1:
+            case 2:
                 SceneManager.LoadScene("Scenes/Level2A");       
                 break;
-            case 2:
+            case 3:
                 SceneManager.LoadScene("Scenes/Level3A");
                 break;
-            case 3:
+            case 4:
                 SceneManager.LoadScene("Scenes/Hunt");
                 break;
             default:
-                level = 0;
+                level = 1;
                 Cursor.visible = true;
                 GotoIntro();
                 break;
@@ -58,13 +59,12 @@ public class UIScript : MonoBehaviour
 
     public void ResetCharacter()
     {
-        LivesUI.lives = 10;
+        LivesUI.lives = 5;
         ScoreScript.CellsCured = 0;
         ScoreScript.VirusKilled = 0;
         Shoot.bombs = 3;
         Shoot.wideShot = false;
         Shoot.rapidFire = false;
         Movement.sprintEnergy = 100;
-
     }
 }

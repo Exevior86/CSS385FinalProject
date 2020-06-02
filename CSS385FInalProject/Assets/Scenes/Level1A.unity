@@ -988,7 +988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 0}
-  slider: {fileID: 0}
 --- !u!1001 &103177465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3814,7 +3813,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 608398477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &656339229
@@ -4647,7 +4646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 854169029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &856944902
@@ -9131,12 +9130,12 @@ PrefabInstance:
     - target: {fileID: 5557331293613872981, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: -1504308969
+      value: 981844953
       objectReference: {fileID: 0}
     - target: {fileID: 5557331293613872981, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6336677712226214956, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
         type: 3}
@@ -10468,7 +10467,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859419882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1861455528
@@ -10697,7 +10696,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871674356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1872412255 stripped
@@ -12145,7 +12144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c938f46d84214ab4cba5e94371a0cdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mPoolSize: 75
+  mPoolSize: 80
 --- !u!4 &1999099936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,

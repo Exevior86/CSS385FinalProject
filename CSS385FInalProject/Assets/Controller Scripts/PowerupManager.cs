@@ -49,6 +49,10 @@ public class PowerupManager : MonoBehaviour
             newpowerup = "Prefabs/Health";
             SpawnReal();
         }
+        else if (shield == 0)
+        {
+            newpowerup = "Prefabs/Shield";
+        }
     }
 
     public static void Spawn(string powerup, Vector3 pos)
