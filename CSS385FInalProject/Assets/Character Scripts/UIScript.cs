@@ -12,6 +12,11 @@ public class UIScript : MonoBehaviour
         SceneManager.LoadScene("Scenes/UI/Settings");
     }
 
+    public void GotoInstructions()
+    {
+        SceneManager.LoadScene("Scenes/UI/instructions");
+    }
+
     public void GotoHighscores()
     {
         SceneManager.LoadScene("Scenes/UI/Highscores");
