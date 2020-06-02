@@ -8,7 +8,7 @@ public class LivesUI : MonoBehaviour
 {
     public static int lives = 5;
     public static float scoreTime;
-    private float percentageSubtract = 1f / 10f;
+    private float percentageSubtract = 1f / 5f;
     private float energyPercent = 1f / 100f;
     private float startTime;
 
@@ -23,7 +23,7 @@ public class LivesUI : MonoBehaviour
     void Update()
     {
         scoreTime = Time.time - startTime;
-        score.text = "Score: " + scoreTime;
+        score.text = "Time: " + Mathf.Round(scoreTime);
         enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
         Bombs.text = "Bombs: " + Shoot.bombs;
         killsNeeded.text = "Kills Needed: " + LevelController.killCount;
@@ -65,6 +65,6 @@ public class LivesUI : MonoBehaviour
 
     public void FillShield()
     {
-        shieldEnergy.fillAmount = Shoot.shield * percentageSubtract;
+        shieldEnergy.fillAmount = Shoot.shield * (1f/ 3f);
     }
 }

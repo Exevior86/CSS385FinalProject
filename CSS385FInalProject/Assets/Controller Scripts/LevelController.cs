@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    public static int killCount = 100;
-    public static int currentLevel = 0;
-
+    public static int killCount = 50;
+    public int currentLevel = 1;
+    public static int difficulty = 1;
+    public GameObject slider;
     // Start is called before the first frame update
     void Start()
     {
         UpdateKillAmount();
+        Debug.Log("Difficulty = ");
+        currentLevel = UIScript.level;
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class LevelController : MonoBehaviour
             SoundManagerScript.PlaySound("WinningSound");
             Cursor.visible = true;
             UIScript.level++;
+            currentLevel++;
             SceneManager.LoadScene("Scenes/UI/WinUI");
             UpdateKillAmount();
         }
@@ -29,6 +33,11 @@ public class LevelController : MonoBehaviour
 
     private void UpdateKillAmount()
     {
-        killCount = killCount + 50 + (50 * currentLevel);
+        killCount = killCount + (25 * currentLevel * difficulty);
+    }
+
+    public void ChangeDifficulty(int value)
+    {
+        difficulty = value;
     }
 }
