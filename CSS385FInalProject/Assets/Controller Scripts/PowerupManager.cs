@@ -28,20 +28,20 @@ public class PowerupManager : MonoBehaviour
 
     void SpawnCheck()
     {
-        int wide = (ScoreScript.VirusKilled + 1) %29;
-        int rapid = (ScoreScript.VirusKilled + 1) % 31;
-        int heart = (ScoreScript.VirusKilled + 1) % 41;
-        int shield = (ScoreScript.VirusKilled + 1) % 55;
+        int wide = (ScoreScript.VirusKilled + 1) % 29;
+        int rapid = (ScoreScript.VirusKilled + 1) % 41;
+        int heart = (ScoreScript.VirusKilled + 1) % 59;
+        int shield = (ScoreScript.VirusKilled + 1) % 73;
 
         newpos = player.transform.position;
         if (wide == 0)
         {
-            newpowerup = "Prefabs/RapidFire";
+            newpowerup = "Prefabs/powerupWide";
             SpawnReal();
         }
         else if (rapid == 0)
         {
-            newpowerup = "Prefabs/powerupWide";
+            newpowerup = "Prefabs/RapidFire";
             SpawnReal();
         }
         else if (heart == 0)
