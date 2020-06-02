@@ -23,7 +23,7 @@ public class PowerupManager : MonoBehaviour
         {
             currentKills = ScoreScript.VirusKilled;
             SpawnCheck();
-        }    
+        }
     }
 
     void SpawnCheck()
@@ -69,7 +69,7 @@ public class PowerupManager : MonoBehaviour
         while (!powerupSpawned)
         {
             Vector3 powerupPosition = new Vector3(Random.Range(0, screenBounds.x), Random.Range(0, screenBounds.y), 0f);
-            if ((powerupPosition - newpos).magnitude < 3)
+            if ((powerupPosition - newpos).magnitude < 1)
             {
                 continue;
             }
