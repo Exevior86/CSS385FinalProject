@@ -136,7 +136,7 @@ public class CellBehavior : MonoBehaviour
         else if (collision.gameObject.CompareTag("Bullet"))
         {
             //Infect();
-            percentInfected -= Time.deltaTime / kSecondsToBeInfected;
+            percentInfected -= Time.deltaTime / 2;
         }
     }
 

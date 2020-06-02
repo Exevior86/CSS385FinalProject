@@ -48,7 +48,7 @@ public class UIScript : MonoBehaviour
                 SceneManager.LoadScene("Scenes/Hunt");
                 break;
             default:
-                LevelController.currentLevel = 1;
+                level = 0;
                 Cursor.visible = true;
                 GotoIntro();
                 break;

@@ -8,7 +8,7 @@ public class Shield : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Shoot.shield = 10;
+            Shoot.shield = 3;
             Destroy(this.gameObject);
             SoundManagerScript.PlaySound("PowerUpSound");
         }

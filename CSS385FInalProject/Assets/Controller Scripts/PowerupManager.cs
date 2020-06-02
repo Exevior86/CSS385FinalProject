@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerupManager : MonoBehaviour
 {
-    public float timer = 10f;
+    public float timer = 20f;
     public GameObject player;
     private static Vector2 screenBounds;
     private static string newpowerup;
@@ -31,6 +31,8 @@ public class PowerupManager : MonoBehaviour
         int wide = (ScoreScript.VirusKilled + 1) %29;
         int rapid = (ScoreScript.VirusKilled + 1) % 31;
         int heart = (ScoreScript.VirusKilled + 1) % 41;
+        int shield = (ScoreScript.VirusKilled + 1) % 55;
+
         newpos = player.transform.position;
         if (wide == 0)
         {
