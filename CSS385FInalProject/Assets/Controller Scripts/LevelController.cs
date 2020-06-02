@@ -9,9 +9,13 @@ public class LevelController : MonoBehaviour
     public int currentLevel = 1;
     public static int difficulty = 1;
     public GameObject slider;
+
+    private MainController mainController = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
         UpdateKillAmount();
         Debug.Log("Difficulty = ");
         currentLevel = UIScript.level;
@@ -22,11 +26,13 @@ public class LevelController : MonoBehaviour
     {
         if(ScoreScript.VirusKilled >= killCount)
         {
-            SoundManagerScript.PlaySound("WinningSound");
-            Cursor.visible = true;
-            UIScript.level++;
-            currentLevel++;
-            SceneManager.LoadScene("Scenes/UI/WinUI");
+            //SoundManagerScript.PlaySound("WinningSound");
+            //Cursor.visible = true;
+            //UIScript.level++;
+            //currentLevel++;
+            //SceneManager.LoadScene("Scenes/UI/WinUI");
+
+            mainController.SignalWin();
             UpdateKillAmount();
         }
     }

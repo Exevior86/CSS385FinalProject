@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainController : MonoBehaviour
 {
+    [SerializeField]
+    private Camera mMainCamera = null;
+
     [SerializeField]
     private ObjectPool mVirusPool = null;
 
@@ -28,7 +33,14 @@ public class MainController : MonoBehaviour
     [SerializeField]
     private Text enemiesKiledText = null;
 
+    [SerializeField]
+    private FlashManager mFlashManager = null;
+    [SerializeField]
+    private FadeManager mFadeManager = null;
+    [SerializeField]
+    private RingWaveManager mRingWaveManager = null;
 
+    private bool mGameOver = false;
 
     void Awake()
     {
@@ -45,7 +57,7 @@ public class MainController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
-            CreateClone();
+            SignalWin();
     }
 
     public bool SpawnVirus(Transform transform)
@@ -66,6 +78,45 @@ public class MainController : MonoBehaviour
     public GameObject GetPlayer()
     {
         return mPlayer;
+    }
+
+    // To be called when the player is hit but not necessarily damaged. A less noticeable effect than damge
+    public void PlayHitEffects()
+    {
+        PlayDamageEffects();
+    }
+
+    // To be callend when the player is damaged. A more noticeable effect than hit
+    public void PlayDamageEffects()
+    {
+        if (!mGameOver)
+        {
+            SoundManagerScript.PlaySound("TakeDamage");
+            mMainCamera.gameObject.GetComponent<Shake>().Play(0.4f, 1, 1.33f);
+            mFlashManager.PlayFlash(Color.red, 0.5f, 0.05f);
+        }
+    }
+
+    public void PlayBombEffects()
+    {
+        mMainCamera.gameObject.GetComponent<Shake>().Play(0.1f, 2, 1.33f);
+        mFlashManager.PlayFlash(Color.white, 0.1f, 0.07f);
+        mRingWaveManager.Play(mPlayer.transform);
+    }
+
+    public void PlayDefeatEffects(Action callback)
+    {
+        SoundManagerScript.PlaySound("Death");
+        Color fadeColor = 0.2f * Color.red;
+        mFadeManager.PlayFade(fadeColor, 3, callback);
+        mMainCamera.gameObject.GetComponent<Shake>().Play(1, 3, 1);
+    }
+
+    public void PlayWinEffects(Action callback)
+    {
+        SoundManagerScript.PlaySound("WinningSound");
+        Color fadeColor = Color.white;
+        mFadeManager.PlayFade(fadeColor, 1.45f, callback);
     }
 
     public void LowerLives()
@@ -96,5 +147,46 @@ public class MainController : MonoBehaviour
     public void SetEnemyTarget(int target)
     {
         //enemyTargetText.text = target.ToString();
+    }
+
+    private void RunEndProcess()
+    {
+        Cursor.visible = true;
+        SceneManager.LoadScene("Scenes/UI/DefeatUI");
+    }
+
+    private void RunWinProcess()
+    {
+        Cursor.visible = true;
+        UIScript.level++;
+        SceneManager.LoadScene("Scenes/UI/WinUI");
+    }
+
+    private void DisablePlayer()
+    {
+        mPlayer.GetComponent<Rigidbody2D>().simulated = false;
+        mPlayer.GetComponent<Movement>().enabled = false;
+        mPlayer.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    public void SignalDefeat()
+    {
+        if (mGameOver)
+        {
+            return;
+        }
+
+        mGameOver = true;
+
+        PlayDefeatEffects(RunEndProcess);
+        DisablePlayer();
+        GameObject.Find("Canvas").SetActive(false);
+    }
+
+    public void SignalWin()
+    {
+        PlayWinEffects(RunWinProcess);
+        DisablePlayer();
+        GameObject.Find("Canvas").SetActive(false);
     }
 }

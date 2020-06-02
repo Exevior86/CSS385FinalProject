@@ -12,6 +12,8 @@ public class LivesUI : MonoBehaviour
     private float energyPercent = 1f / 100f;
     private float startTime;
 
+    private MainController mainController = null;
+
     public Image shieldEnergy;
     public Image bar;
     public Image energyBar;
@@ -35,6 +37,7 @@ public class LivesUI : MonoBehaviour
 
     void Start()
     {
+        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
         startTime = Time.time;
     }
 
@@ -42,13 +45,10 @@ public class LivesUI : MonoBehaviour
     {
         if (lives <= 1)
         {
-            SoundManagerScript.PlaySound("Death");
-            Cursor.visible = true;
-            SceneManager.LoadScene("Scenes/UI/DefeatUI");
+            mainController.SignalDefeat();
         }
         else
         {
-            SoundManagerScript.PlaySound("TakeDamage");
             lives--;
         }
     }

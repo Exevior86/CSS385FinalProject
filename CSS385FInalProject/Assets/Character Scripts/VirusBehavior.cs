@@ -21,6 +21,15 @@ public class VirusBehavior : MonoBehaviour
     private float mSecondsDestroyed = 0.0f;
     private const float kDestructionDelay = 3;
 
+    private bool mIsDamaging = false;
+    private float mSecondsSinceInstantiation = 0;
+    [SerializeField]
+    private float mSecondsBeforeDamaging = 2;
+
+    //private float mSecondsSinceTargetChange = 0.0f;
+    //[SerializeField]
+    //private float kSecondsUntilTargetChange = 12;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +41,15 @@ public class VirusBehavior : MonoBehaviour
 
     void OnEnable()
     {
-        Start();
+        //Start();
+        mIsDamaging = false;
+        mSecondsSinceInstantiation = 0;
         GetComponent<SwimTemporaryWander>().enabled = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         mDestroyed = false;
         mCurrentHealth = mMaxHealth;
+        //mSecondsSinceTargetChange = 0;
     }
 
     // Update is called once per frame
@@ -53,6 +65,21 @@ public class VirusBehavior : MonoBehaviour
             }
         }
 
+        if (!mIsDamaging)
+        {
+            mSecondsSinceInstantiation += Time.deltaTime;
+            if (mSecondsSinceInstantiation > mSecondsBeforeDamaging)
+            {
+                mIsDamaging = true;
+            }
+        }
+
+        //mSecondsSinceTargetChange += Time.deltaTime;
+        //if (mSecondsSinceTargetChange > kSecondsUntilTargetChange)
+        //{
+        //    SelectTarget();
+        //    mSecondsSinceTargetChange = 0;
+        //}
 
         if (mTarget != null && mTarget.CompareTag("Cell"))
         {
@@ -61,6 +88,11 @@ public class VirusBehavior : MonoBehaviour
                 SelectTarget();
             }
         }
+    }
+
+    public bool isDamaging()
+    {
+        return mIsDamaging;
     }
 
     public void SelectTarget()

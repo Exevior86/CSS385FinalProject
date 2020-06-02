@@ -32,7 +32,7 @@ public class Shoot : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         target = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         crosshairs.transform.position = new Vector2(target.x, target.y);
@@ -76,6 +76,7 @@ public class Shoot : MonoBehaviour
         {
             if (bombs > 0)
             {
+                mainController.PlayBombEffects();
                 clearScreen();
                 bombs--;
             }
@@ -161,15 +162,19 @@ public class Shoot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Virus"))
+        if (collision.gameObject.CompareTag("Virus") && collision.gameObject.GetComponent<VirusBehavior>().isDamaging())
         {
-            if(shield > 0)
+            mainController.PlayHitEffects();
+            if (shield > 0)
             {
                 SoundManagerScript.PlaySound("TakeDamage");
                 shield--;
             }
             else
+            {
                 mainController.LowerLives();
+                mainController.PlayDamageEffects();
+            }
         }
     }
 }

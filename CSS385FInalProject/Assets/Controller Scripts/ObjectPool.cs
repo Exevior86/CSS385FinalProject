@@ -32,6 +32,18 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    public void IncreaseCapacity(int increaseAmount)
+    {
+        for (int i = 0; i < increaseAmount; i++)
+        {
+            GameObject newObj = GameObject.Instantiate(mPrefab) as GameObject;
+            newObj.SetActive(false);
+            newObj.transform.parent = this.transform;
+            mPool.AddFirst(newObj);
+        }
+        mPoolSize += increaseAmount;
+    }
+
     public GameObject InstantiateObject(Transform transform)
     {
         Debug.Assert(mPool.First != null);
@@ -49,8 +61,8 @@ public class ObjectPool : MonoBehaviour
         if (newObj != null)
         {
             newObj.SetActive(true);
-            newObj.transform.localPosition = transform.localPosition;
-            newObj.transform.localRotation = transform.localRotation;
+            newObj.transform.position = transform.position;
+            newObj.transform.rotation = transform.rotation;
         }
 
         return newObj;
