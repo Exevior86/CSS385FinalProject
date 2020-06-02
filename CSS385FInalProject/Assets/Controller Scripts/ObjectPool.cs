@@ -16,7 +16,6 @@ public class ObjectPool : MonoBehaviour
     {
         Debug.Assert(mPrefab != null);
         mPool = new LinkedList<GameObject>();
-
         InitalizePool();
     }
 

@@ -45,9 +45,9 @@ public class UIScript : MonoBehaviour
             case 3:
                 SceneManager.LoadScene("Scenes/Level3A");
                 break;
-            case 4:
-                SceneManager.LoadScene("Scenes/Hunt");
-                break;
+            //case 4:
+            //    SceneManager.LoadScene("Scenes/Hunt");
+            //    break;
             default:
                 level = 1;
                 Cursor.visible = true;

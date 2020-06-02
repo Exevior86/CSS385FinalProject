@@ -33,24 +33,38 @@ public class MainController : MonoBehaviour
     [SerializeField]
     private Text enemiesKiledText = null;
 
-    [SerializeField]
     private FlashManager mFlashManager = null;
-    [SerializeField]
     private FadeManager mFadeManager = null;
-    [SerializeField]
     private RingWaveManager mRingWaveManager = null;
 
     private bool mGameOver = false;
 
     void Awake()
     {
+        mVirusPool = GameObject.Find("VirusPool").GetComponent<ObjectPool>();
         Debug.Assert(mVirusPool != null);
+
         //Debug.Assert(mPlayer != null);
         mVirusPool.SetObjectType(Resources.Load("Prefabs/virus_0") as GameObject);
     }
 
     void Start()
     {
+        mCellManager = GameObject.Find("CellManager").GetComponent<CellManager>();
+        Debug.Assert(mCellManager != null);
+        mPlayer = GameObject.FindWithTag("Player");
+        Debug.Assert(mPlayer != null);
+
+        mCloneManager = GameObject.Find("CloneManager").GetComponent<PlayerCloneController>();
+        Debug.Assert(mCloneManager != null);
+        mFlashManager = GameObject.Find("FlashManager").GetComponent<FlashManager>();
+        Debug.Assert(mFlashManager != null);
+        mFadeManager = GameObject.Find("FadeManager").GetComponent<FadeManager>();
+        Debug.Assert(mFadeManager != null);
+        mRingWaveManager = GameObject.Find("RingWaveManager").GetComponent<RingWaveManager>();
+        Debug.Assert(mRingWaveManager != null);
+
+
         Debug.Assert(mVirusPool != null);
     }
 

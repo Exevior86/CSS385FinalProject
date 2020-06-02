@@ -10,7 +10,7 @@ public class MasterSound : MonoBehaviour
     private static float value = .5f;
     private void Start()
     {
-        slider.GetComponent<Slider>().value = value;
+        //slider.GetComponent<Slider>().value = value;
     }
     void Update()
     {
