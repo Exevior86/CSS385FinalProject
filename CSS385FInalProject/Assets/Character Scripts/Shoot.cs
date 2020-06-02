@@ -160,7 +160,7 @@ public class Shoot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Virus"))
+        if (collision.gameObject.CompareTag("Virus") && collision.gameObject.GetComponent<VirusBehavior>().isDamaging())
         {
             mainController.PlayHitEffects();
             if (shield > 0)

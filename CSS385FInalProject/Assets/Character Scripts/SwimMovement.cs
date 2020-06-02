@@ -13,9 +13,16 @@ public class SwimMovement : MonoBehaviour
     private float kTimeUntilNextDirectionChange = 0.0f;
     private Vector2 mDirection;
 
+    private VirusAggressionController mVirusAggression = null;
+
     [SerializeField]
     private float mSecondsBetweenDirectionChecks = 0.0f;
     private float mSecondsSinceLastDirectionCheck = 0.0f;
+
+    private float mMinTimeBetweenMoves = 0;
+    [SerializeField]
+    private float mMaxTimeBetweenMoves = 1;
+
 
     private Transform mTarget;
 
@@ -32,6 +39,12 @@ public class SwimMovement : MonoBehaviour
         return (mTarget.position - transform.position).normalized;
     }
 
+    void Start()
+    {
+        mVirusAggression = GameObject.Find("VirusAggression").GetComponent<VirusAggressionController>();
+        Debug.Assert(mVirusAggression != null);
+    }
+
     void OnEnable()
     {
         mDirection = Random.insideUnitCircle;
@@ -40,6 +53,8 @@ public class SwimMovement : MonoBehaviour
 
     void Update()
     {
+        SetAgression(mVirusAggression.GetAggression());
+
         mSecondsSinceLastMove += Time.deltaTime;
         mSecondsSinceLastDirectionCheck += Time.deltaTime;
         if (mSecondsSinceLastDirectionCheck > mSecondsBetweenDirectionChecks)
@@ -56,9 +71,17 @@ public class SwimMovement : MonoBehaviour
             rigidbody.AddForce(direction * mSpeed, ForceMode2D.Impulse);
 
             mSecondsSinceLastMove = 0.0f;
-            mSecondsUntilNextMove = Random.value;
+            mSecondsUntilNextMove = Random.Range(mMinTimeBetweenMoves, mMaxTimeBetweenMoves);
         }
 
+    }
+
+    public void SetAgression(float aggresion)
+    {
+        mMaxTimeBetweenMoves = 1 / aggresion;
+        mDirectionNoiseStrength = 1 / aggresion;
+
+        mSpeed = aggresion + 4;
     }
 
     public void SetToTarget(Transform target)

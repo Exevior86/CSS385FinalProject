@@ -57,7 +57,7 @@ public class MainController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
-            PlayBombEffects();
+            SignalWin();
     }
 
     public bool SpawnVirus(Transform transform)
@@ -91,6 +91,7 @@ public class MainController : MonoBehaviour
     {
         if (!mGameOver)
         {
+            SoundManagerScript.PlaySound("TakeDamage");
             mMainCamera.gameObject.GetComponent<Shake>().Play(0.4f, 1, 1.33f);
             mFlashManager.PlayFlash(Color.red, 0.5f, 0.05f);
         }
@@ -98,21 +99,24 @@ public class MainController : MonoBehaviour
 
     public void PlayBombEffects()
     {
-        //mMainCamera.gameObject.GetComponent<Shake>().Play(0.1f, 2, 1.33f);
+        mMainCamera.gameObject.GetComponent<Shake>().Play(0.1f, 2, 1.33f);
         mFlashManager.PlayFlash(Color.white, 0.1f, 0.07f);
         mRingWaveManager.Play(mPlayer.transform);
     }
 
     public void PlayDefeatEffects(Action callback)
     {
+        SoundManagerScript.PlaySound("Death");
         Color fadeColor = 0.2f * Color.red;
         mFadeManager.PlayFade(fadeColor, 3, callback);
         mMainCamera.gameObject.GetComponent<Shake>().Play(1, 3, 1);
     }
 
-    public void PlayWinEffects()
+    public void PlayWinEffects(Action callback)
     {
-
+        SoundManagerScript.PlaySound("WinningSound");
+        Color fadeColor = Color.white;
+        mFadeManager.PlayFade(fadeColor, 1.45f, callback);
     }
 
     public void LowerLives()
@@ -151,6 +155,20 @@ public class MainController : MonoBehaviour
         SceneManager.LoadScene("Scenes/UI/DefeatUI");
     }
 
+    private void RunWinProcess()
+    {
+        Cursor.visible = true;
+        UIScript.level++;
+        SceneManager.LoadScene("Scenes/UI/WinUI");
+    }
+
+    private void DisablePlayer()
+    {
+        mPlayer.GetComponent<Rigidbody2D>().simulated = false;
+        mPlayer.GetComponent<Movement>().enabled = false;
+        mPlayer.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
     public void SignalDefeat()
     {
         if (mGameOver)
@@ -161,7 +179,14 @@ public class MainController : MonoBehaviour
         mGameOver = true;
 
         PlayDefeatEffects(RunEndProcess);
-        mPlayer.GetComponent<PlayerDefeatBehavior>().Play();
+        DisablePlayer();
+        GameObject.Find("Canvas").SetActive(false);
+    }
+
+    public void SignalWin()
+    {
+        PlayWinEffects(RunWinProcess);
+        DisablePlayer();
         GameObject.Find("Canvas").SetActive(false);
     }
 }

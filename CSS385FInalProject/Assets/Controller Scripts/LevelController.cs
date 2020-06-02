@@ -8,9 +8,12 @@ public class LevelController : MonoBehaviour
     public static int killCount = 50;
     public static int currentLevel = 0;
 
+    private MainController mainController = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
         UpdateKillAmount();
     }
 
@@ -19,10 +22,7 @@ public class LevelController : MonoBehaviour
     {
         if(ScoreScript.VirusKilled >= killCount)
         {
-            SoundManagerScript.PlaySound("WinningSound");
-            Cursor.visible = true;
-            UIScript.level++;
-            SceneManager.LoadScene("Scenes/UI/WinUI");
+            mainController.SignalWin();
             UpdateKillAmount();
         }
     }

@@ -9660,6 +9660,7 @@ MonoBehaviour:
   mMovement: {fileID: 3581559535759447594}
   virusKillParticleSystem: {fileID: 237991229}
   virusKillParticleSystem2: {fileID: 978608820}
+  mSecondsBeforeDamaging: 2
 --- !u!114 &3581559535759447594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9676,6 +9677,7 @@ MonoBehaviour:
   mDirectionNoiseStrength: 1
   kTimeUntilNextDirectionChange: 2
   mSecondsBetweenDirectionChecks: 0
+  mMaxTimeBetweenMoves: 0.25
 --- !u!114 &-777582810398049179
 MonoBehaviour:
   m_ObjectHideFlags: 0
