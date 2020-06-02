@@ -8,16 +8,16 @@ public class MasterSound : MonoBehaviour
 {
     public AudioMixer mixer;
     public GameObject slider;
-    private static float value = 1.0f;
+    private static float value = .5f;
 
     void Update()
     {
         slider.GetComponent<Slider>().value = value;
+        AudioListener.volume = value;
     }
 
     public void SetLevel(float sliderValue)
     {
         value = sliderValue;
-        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue)*20);
     }
 }

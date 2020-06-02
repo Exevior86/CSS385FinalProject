@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LivesUI : MonoBehaviour
 {
-    public static int lives = 10;
+    public static int lives = 5;
     public static float scoreTime;
     private float percentageSubtract = 1f / 10f;
     private float energyPercent = 1f / 100f;
@@ -40,7 +40,7 @@ public class LivesUI : MonoBehaviour
 
     public void LowerLives()
     {
-        if (lives <= 0)
+        if (lives <= 1)
         {
             SoundManagerScript.PlaySound("Death");
             Cursor.visible = true;

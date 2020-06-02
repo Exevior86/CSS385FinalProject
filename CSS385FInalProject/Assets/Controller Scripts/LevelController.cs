@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    public static int killCount = 50;
+    public static int killCount = 100;
     public static int currentLevel = 0;
 
     // Start is called before the first frame update
