@@ -27,7 +27,7 @@ public class LivesUI : MonoBehaviour
     {
         scoreTime = Time.time - startTime;
         score.text = "Time: " + Mathf.Round(scoreTime);
-        //enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
+        enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
         Bombs.text = "Count: " + Shoot.bombs;
         killsNeeded.text = "Kills Needed: " + ((int)LevelController.killCount - ScoreScript.VirusKilled);
         bombCd.text = Mathf.Round(Shoot.bombCooldown).ToString();
