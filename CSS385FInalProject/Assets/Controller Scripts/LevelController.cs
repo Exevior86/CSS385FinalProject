@@ -15,7 +15,8 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainController = GameObject.Find("GameManager").GetComponent<MainController>();
+        GameObject temp = GameObject.Find("GameManager");
+        mainController = temp?.GetComponent<MainController>();
         currentLevel = UIScript.level;
     }
 
