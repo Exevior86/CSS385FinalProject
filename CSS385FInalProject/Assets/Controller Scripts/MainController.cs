@@ -71,7 +71,7 @@ public class MainController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
-            SignalWin();
+            CreateClone();
     }
 
     public bool SpawnVirus(Transform transform)
