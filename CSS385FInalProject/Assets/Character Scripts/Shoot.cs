@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed = 15.0f;
 
     public static int bombs = 3;
+    public static float bombCooldown = 0;
     public static float cooldown = .1f;
     public float cooldownTimer = 0;
     public static float powerUpCdTimer = 0;
@@ -49,6 +50,10 @@ public class Shoot : MonoBehaviour
         {
             cooldownTimer -= Time.deltaTime;
         }
+        if (bombCooldown > 0)
+        {
+            bombCooldown -= Time.deltaTime;
+        }
         if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
         {
             if (cooldownTimer <= 0)
@@ -74,11 +79,12 @@ public class Shoot : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.B))
         {
-            if (bombs > 0)
+            if (bombs > 0 && bombCooldown <= 0)
             {
                 mainController.PlayBombEffects();
                 clearScreen();
                 bombs--;
+                bombCooldown = 20;
             }
         }
 

@@ -3301,9 +3301,6 @@ MonoBehaviour:
   mUIManager: {fileID: 0}
   enemyTargetText: {fileID: 0}
   enemiesKiledText: {fileID: 0}
-  mFlashManager: {fileID: 1991200940}
-  mFadeManager: {fileID: 1499828411}
-  mRingWaveManager: {fileID: 1340136774}
 --- !u!4 &262945444
 Transform:
   m_ObjectHideFlags: 0
@@ -7515,6 +7512,7 @@ GameObject:
   - component: {fileID: 608398480}
   - component: {fileID: 608398479}
   - component: {fileID: 608398481}
+  - component: {fileID: 608398482}
   m_Layer: 0
   m_Name: GameObject (3)
   m_TagString: Finish
@@ -7621,6 +7619,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &608398482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608398477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &612507368
@@ -9934,6 +9944,7 @@ GameObject:
   - component: {fileID: 854169032}
   - component: {fileID: 854169031}
   - component: {fileID: 854169033}
+  - component: {fileID: 854169034}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Finish
@@ -10040,6 +10051,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &854169034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854169029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &855524734
@@ -12168,6 +12191,7 @@ MonoBehaviour:
   enemies: {fileID: 159037498}
   Bombs: {fileID: 1209355538}
   killsNeeded: {fileID: 245912370}
+  bombCd: {fileID: 0}
 --- !u!114 &1048389473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20375,6 +20399,7 @@ GameObject:
   - component: {fileID: 1859419885}
   - component: {fileID: 1859419884}
   - component: {fileID: 1859419886}
+  - component: {fileID: 1859419887}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Finish
@@ -20483,6 +20508,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1859419887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859419882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1863768551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043215517722820276, guid: 20fe7215eb37cc842a90cf82d0ac39fe,
@@ -20507,6 +20544,7 @@ GameObject:
   - component: {fileID: 1871674359}
   - component: {fileID: 1871674358}
   - component: {fileID: 1871674360}
+  - component: {fileID: 1871674361}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Finish
@@ -20613,6 +20651,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e5ea2d1342bb0c41aba4acdda610133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1871674361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871674356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326f07cc9e3e1294b98a21d5336984d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1880864935

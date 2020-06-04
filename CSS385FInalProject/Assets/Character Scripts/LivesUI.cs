@@ -21,14 +21,16 @@ public class LivesUI : MonoBehaviour
     public Text enemies;
     public Text Bombs;
     public Text killsNeeded;
+    public Text bombCd;
 
     void Update()
     {
         scoreTime = Time.time - startTime;
         score.text = "Time: " + Mathf.Round(scoreTime);
-        enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
-        Bombs.text = "Bombs: " + Shoot.bombs;
-        killsNeeded.text = "Kills Needed: " + LevelController.killCount;
+        //enemies.text = "Virus Defeated: " + ScoreScript.VirusKilled;
+        Bombs.text = "Count: " + Shoot.bombs;
+        killsNeeded.text = "Kills Needed: " + ((int)LevelController.killCount - ScoreScript.VirusKilled);
+        bombCd.text = Mathf.Round(Shoot.bombCooldown).ToString();
 
         FillEnergyBar();
         FillLives();

@@ -28,10 +28,10 @@ public class PowerupManager : MonoBehaviour
 
     void SpawnCheck()
     {
-        int wide = (ScoreScript.VirusKilled + 1) % 101;
-        int rapid = (ScoreScript.VirusKilled + 1) % 101;
-        int heart = (ScoreScript.VirusKilled + 1) % 101;
-        int shield = (ScoreScript.VirusKilled + 1) % 101;
+        int wide = (ScoreScript.VirusKilled + 1) % 51;
+        int rapid = (ScoreScript.VirusKilled + 1) % 51;
+        int heart = (ScoreScript.VirusKilled + 1) % 51;
+        int shield = (ScoreScript.VirusKilled + 1) % 51;
 
         newpos = player.transform.position;
         if (wide == 0)

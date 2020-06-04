@@ -128,7 +128,11 @@ public class MainController : MonoBehaviour
 
     public void PlayWinEffects(Action callback)
     {
-        SoundManagerScript.PlaySound("WinningSound");
+        if (LevelController.lastLevel)
+            SoundManagerScript.PlaySound("WinningSound");
+        else
+            SoundManagerScript.PlaySound("LevelCompleteOGG");
+
         Color fadeColor = Color.white;
         mFadeManager.PlayFade(fadeColor, 1.45f, callback);
     }
@@ -166,14 +170,20 @@ public class MainController : MonoBehaviour
     private void RunEndProcess()
     {
         Cursor.visible = true;
-        SceneManager.LoadScene("Scenes/UI/DefeatUI");
+        if (LevelController.survival)
+            SceneManager.LoadScene("Scenes/UI/SurvivalDefeat");
+        else
+            SceneManager.LoadScene("Scenes/UI/DefeatUI");
     }
 
     private void RunWinProcess()
     {
         Cursor.visible = true;
         UIScript.level++;
-        SceneManager.LoadScene("Scenes/UI/WinUI");
+        if (LevelController.lastLevel) 
+            SceneManager.LoadScene("Scenes/UI/WinUI");
+        else
+            SceneManager.LoadScene("Scenes/UI/LevelComplete");
     }
 
     private void DisablePlayer()

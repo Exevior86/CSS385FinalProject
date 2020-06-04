@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
+    public static bool survival;
+    public static bool lastLevel;
     public static int killCount = 75;
     public static int currentLevel = 1;
     public static int difficulty = 1;
