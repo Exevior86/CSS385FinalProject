@@ -22,6 +22,9 @@ public class Shoot : MonoBehaviour
     public static int damage = 1;
     private Vector3 target;
 
+    [SerializeField]
+    private bool muteSound = false;
+
     private MainController mainController = null;
 
     // Start is called before the first frame update
@@ -73,7 +76,8 @@ public class Shoot : MonoBehaviour
                     fireBullet(difference, rotationZ);
                 }
 
-                SoundManagerScript.PlaySound("pow");
+                if (!muteSound)
+                    SoundManagerScript.PlaySound("pow");
                 cooldownTimer = cooldown;
             }
         }

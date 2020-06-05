@@ -35,46 +35,55 @@ public class CameraFollow : MonoBehaviour
 			lerpedPosition = Vector3.Lerp(transform.position, target.position, Time.deltaTime * 10f);
 			lerpedPosition.z = -10f;
 		}
-	}
 
 
 
-	// LateUpdate is called after all other objects have moved
-	void LateUpdate ()
-	{
-		if(target != null)
-		{
-			// Move the camera in the position found previously
-			transform.position = lerpedPosition;
+        if (target != null)
+        {
+            // Move the camera in the position found previously
+            transform.position = lerpedPosition;
 
 
             // Apply shake effect, if any
             transform.position += _shake.GetDeltaVec();
 
             // Bounds the camera to the limits (if enabled)
-            if (limitBounds) {
+            if (limitBounds)
+            {
                 Vector3 bottomLeft = _camera.ScreenToWorldPoint(Vector3.zero);
                 Vector3 topRight = _camera.ScreenToWorldPoint(new Vector3(_camera.pixelWidth, _camera.pixelHeight));
                 Vector2 screenSize = new Vector2(topRight.x - bottomLeft.x, topRight.y - bottomLeft.y);
 
                 Vector3 boundPosition = transform.position;
-                if (boundPosition.x > right - (screenSize.x / 2f)) {
+                if (boundPosition.x > right - (screenSize.x / 2f))
+                {
                     boundPosition.x = right - (screenSize.x / 2f);
                 }
-                if (boundPosition.x < left + (screenSize.x / 2f)) {
+                if (boundPosition.x < left + (screenSize.x / 2f))
+                {
                     boundPosition.x = left + (screenSize.x / 2f);
                 }
 
-                if (boundPosition.y > top - (screenSize.y / 2f)) {
+                if (boundPosition.y > top - (screenSize.y / 2f))
+                {
                     boundPosition.y = top - (screenSize.y / 2f);
                 }
-                if (boundPosition.y < bottom + (screenSize.y / 2f)) {
+                if (boundPosition.y < bottom + (screenSize.y / 2f))
+                {
                     boundPosition.y = bottom + (screenSize.y / 2f);
                 }
                 transform.position = boundPosition;
             }
 
-            
+
         }
-	}
+    }
+
+
+
+	//// LateUpdate is called after all other objects have moved
+	//void LateUpdate ()
+	//{
+		
+	//}
 }

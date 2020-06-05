@@ -36,12 +36,12 @@ public class PowerupManager : MonoBehaviour
         newpos = player.transform.position;
         if (wide == 0)
         {
-            newpowerup = "Prefabs/RapidFire";
+            newpowerup = "Prefabs/powerupWide";
             SpawnReal();
         }
         else if (rapid == 0)
         {
-            newpowerup = "Prefabs/powerupWide";
+            newpowerup = "Prefabs/RapidFire";
             SpawnReal();
         }
         else if (heart == 0)

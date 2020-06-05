@@ -12,6 +12,11 @@ public class UIScript : MonoBehaviour
         SceneManager.LoadScene("Scenes/UI/Settings");
     }
 
+    public void GotoInstructions()
+    {
+        SceneManager.LoadScene("Scenes/UI/instructions");
+    }
+
     public void GotoHighscores()
     {
         SceneManager.LoadScene("Scenes/UI/Highscores");
@@ -30,6 +35,7 @@ public class UIScript : MonoBehaviour
         LevelController.lastLevel = false;
         LevelController.survival = false;
         LevelController.killCount = 75;
+
         level = 1;
         SceneManager.LoadScene("Scenes/UI/Intro UI");
     }
@@ -65,14 +71,18 @@ public class UIScript : MonoBehaviour
             case 2:
                 SceneManager.LoadScene("Scenes/Level2A");       
                 break;
-            case 3:
-                LevelController.lastLevel = true;
+            case 3: 
                 SceneManager.LoadScene("Scenes/Level3A");
                 break;
-            //case 4:
-            //    SceneManager.LoadScene("Scenes/Hunt");
-            //    break;
+            case 4:
+                SceneManager.LoadScene("Scenes/level4B");
+                break;
+            case 5:
+                LevelController.lastLevel = true;
+                SceneManager.LoadScene("Scenes/level5B");
+                break;
             default:
+                level = 1;
                 Cursor.visible = true;
                 GotoIntro();
                 break;
@@ -85,6 +95,7 @@ public class UIScript : MonoBehaviour
         ScoreScript.CellsCured = 0;
         ScoreScript.VirusKilled = 0;
         Shoot.bombs = 3;
+        Shoot.bombCooldown = 0;
         Shoot.wideShot = false;
         Shoot.rapidFire = false;
         Movement.sprintEnergy = 100;
