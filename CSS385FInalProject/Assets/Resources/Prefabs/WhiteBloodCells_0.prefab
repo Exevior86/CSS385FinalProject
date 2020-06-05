@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1341134601452073131}
   - component: {fileID: 1341134601452073132}
   - component: {fileID: 1341134601452073135}
-  - component: {fileID: 1341134601452073130}
   m_Layer: 0
   m_Name: WhiteBloodCells_0
   m_TagString: Player
@@ -72,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 144056267
-  m_SortingLayer: 0
+  m_SortingLayerID: 1101536839
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: -4186569870743770075, guid: eaf7e072f9d2739459127b0a1dd82a0f,
     type: 3}
@@ -102,9 +101,10 @@ MonoBehaviour:
   player: {fileID: 1341134601452073125}
   bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
     type: 3}
-  crosshairs: {fileID: 1204106705304690290}
   bulletSpeed: 25
   cooldownTimer: 0
+  muteSound: 0
+  radius: 10
 --- !u!114 &1341134601452073131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,19 +164,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.89, y: 1.14}
   m_EdgeRadius: 0
---- !u!114 &1341134601452073130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341134601452073125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df7f85da1d55e34b8c5403c8cda4f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainController: {fileID: 0}
 --- !u!1001 &5135720292768479838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,12 +268,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7eab8469f8b6c04ea3d08cf0e0a6354, type: 3}
---- !u!1 &1204106705304690290 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6336677712226214956, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
-    type: 3}
-  m_PrefabInstance: {fileID: 5135720292768479838}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4497062809514259177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8731767920214755511, guid: e7eab8469f8b6c04ea3d08cf0e0a6354,
