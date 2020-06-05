@@ -44,57 +44,60 @@ public class Shoot : MonoBehaviour
         Vector3 difference = target - transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         difference.Normalize();
-        if (powerUpCdTimer > 0)
+        if (!PauseButton.GamePaused)
         {
-            powerUpCdTimer -= Time.deltaTime;
-        }
-
-        if (cooldownTimer > 0)
-        {
-            cooldownTimer -= Time.deltaTime;
-        }
-        if (bombCooldown > 0)
-        {
-            bombCooldown -= Time.deltaTime;
-        }
-        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
-        {
-            if (cooldownTimer <= 0)
+            if (powerUpCdTimer > 0)
             {
-                if (wideShot && powerUpCdTimer > 0)
-                {
-                    fireWide(difference, rotationZ);
-                }
-                if (rapidFire && powerUpCdTimer > 0)
-                {
-                    bulletSpeed = 35;
-                    fireBullet(difference, rotationZ);
-                }
-                if (powerUpCdTimer <= 0)
-                {
-                    clearPowerUps();
-                    fireBullet(difference, rotationZ);
-                }
-
-                if (!muteSound)
-                    SoundManagerScript.PlaySound("pow");
-                cooldownTimer = cooldown;
+                powerUpCdTimer -= Time.deltaTime;
             }
-        }
-        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.B))
-        {
-            if (bombs > 0 && bombCooldown <= 0)
+
+            if (cooldownTimer > 0)
             {
-                mainController.PlayBombEffects();
-                clearScreen();
-                bombs--;
-                bombCooldown = 20;
+                cooldownTimer -= Time.deltaTime;
             }
-        }
+            if (bombCooldown > 0)
+            {
+                bombCooldown -= Time.deltaTime;
+            }
+            if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
+            {
+                if (cooldownTimer <= 0)
+                {
+                    if (wideShot && powerUpCdTimer > 0)
+                    {
+                        fireWide(difference, rotationZ);
+                    }
+                    if (rapidFire && powerUpCdTimer > 0)
+                    {
+                        bulletSpeed = 35;
+                        fireBullet(difference, rotationZ);
+                    }
+                    if (powerUpCdTimer <= 0)
+                    {
+                        clearPowerUps();
+                        fireBullet(difference, rotationZ);
+                    }
 
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            ScoreScript.VirusKilled += 10000;
+                    if (!muteSound)
+                        SoundManagerScript.PlaySound("pow");
+                    cooldownTimer = cooldown;
+                }
+            }
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.B))
+            {
+                if (bombs > 0 && bombCooldown <= 0)
+                {
+                    mainController.PlayBombEffects();
+                    clearScreen();
+                    bombs--;
+                    bombCooldown = 20;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                ScoreScript.VirusKilled += 10000;
+            }
         }
     }
 
