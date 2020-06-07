@@ -36,7 +36,6 @@ public class VirusBehavior : MonoBehaviour
         mMainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mMainController != null);
         mCurrentHealth = mCurrentHealth * LevelController.difficulty;
-        mMaxHealth = mMaxHealth * LevelController.difficulty;
     }
 
     void OnEnable()

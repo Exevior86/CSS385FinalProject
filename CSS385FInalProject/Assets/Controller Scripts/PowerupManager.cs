@@ -28,10 +28,25 @@ public class PowerupManager : MonoBehaviour
 
     void SpawnCheck()
     {
-        int wide = (ScoreScript.VirusKilled + 1) % (81 / LevelController.difficulty) + (5 * LevelController.difficulty);
-        int rapid = (ScoreScript.VirusKilled + 1) % (91 / LevelController.difficulty) + (5 * LevelController.difficulty);
-        int heart = (ScoreScript.VirusKilled + 1) % (101 / LevelController.difficulty) + (5 * LevelController.difficulty);
-        int shield = (ScoreScript.VirusKilled + 1) % (76 / LevelController.difficulty) + (5 * LevelController.difficulty);
+        int wide = 1;
+        int rapid = 1;
+        int heart = 1;
+        int shield = 1;
+
+        if (!LevelController.survival)
+        {
+            wide = (ScoreScript.VirusKilled + 1) % 75;
+            rapid = (ScoreScript.VirusKilled + 1) % 75;
+            heart = (ScoreScript.VirusKilled + 1) % 75;
+            shield = (ScoreScript.VirusKilled + 1) % 75;
+        }
+        if (LevelController.survival)
+        {
+            wide = (ScoreScript.VirusKilled + 1) % 76;
+            rapid = (ScoreScript.VirusKilled + 1) % 76;
+            heart = (ScoreScript.VirusKilled + 1) % 76;
+            shield = (ScoreScript.VirusKilled + 1) % 76;
+        }
 
         newpos = player.transform.position;
         if (wide == 0)
@@ -52,6 +67,7 @@ public class PowerupManager : MonoBehaviour
         if (shield == 0)
         {
             newpowerup = "Prefabs/Shield";
+            SpawnReal();
         }
     }
 

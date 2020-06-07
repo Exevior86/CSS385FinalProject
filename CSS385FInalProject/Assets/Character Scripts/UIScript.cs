@@ -7,6 +7,11 @@ public class UIScript : MonoBehaviour
 {
     public static int level = 1;
 
+    private void Awake()
+    {
+        LevelController.difficulty = 1;
+    }
+
     public void GotoSettings()
     {
         SceneManager.LoadScene("Scenes/UI/Settings");
@@ -24,7 +29,10 @@ public class UIScript : MonoBehaviour
 
     public void GotoGame()
     {
+        LevelController.killCount = LevelController.difficulty * level * 75;
         LevelController.survival = false;
+        Debug.Log("Difficulty = " + LevelController.difficulty);
+        Debug.Log("Killcount = " + LevelController.killCount);
         Cursor.visible = false;
         ResetCharacter();
         SceneManager.LoadScene("Scenes/Level1A");
@@ -99,5 +107,11 @@ public class UIScript : MonoBehaviour
         Shoot.wideShot = false;
         Shoot.rapidFire = false;
         Movement.sprintEnergy = 100;
+        Movement.mHeroSpeed = 10;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

@@ -11,7 +11,7 @@ public class score : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = "Score: " + LivesUI.scoreTime;
+        scoreText.text = "Time: " + Mathf.Round(LivesUI.scoreTime);
         timeText.text = "Virus Destroyed: " + ScoreScript.VirusKilled;
         cellsText.text = "Cells Cured: " + ScoreScript.CellsCured;
     }   
