@@ -17,6 +17,7 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        killCount = killCount + (75 * currentLevel * difficulty);
         GameObject temp = GameObject.Find("GameManager");
         mainController = temp?.GetComponent<MainController>();
         currentLevel = UIScript.level;

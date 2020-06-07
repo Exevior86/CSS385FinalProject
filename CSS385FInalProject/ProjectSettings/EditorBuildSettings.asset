@@ -4,5 +4,44 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/UI/Intro UI.unity
+    guid: 1442deec3c9195f45a7f755f5004e41d
+  - enabled: 1
+    path: Assets/Scenes/UI/DefeatUI.unity
+    guid: 81f01924a59647840be50d3efa68a2d5
+  - enabled: 1
+    path: Assets/Scenes/UI/instructions.unity
+    guid: 89f7cd4545d45b44f94f73c71252ed17
+  - enabled: 1
+    path: Assets/Scenes/UI/LevelComplete.unity
+    guid: 357870d3a28bac241a4e565952dffd08
+  - enabled: 1
+    path: Assets/Scenes/UI/Settings.unity
+    guid: 6764847c090c6bf4d952d06fd99e2e5b
+  - enabled: 1
+    path: Assets/Scenes/UI/SurvivalDefeat.unity
+    guid: f5cf87d11084c9f4db71a18bd9c74184
+  - enabled: 1
+    path: Assets/Scenes/UI/WinUI.unity
+    guid: 2b0cad3f47df3a7459ea2e786b0195c5
+  - enabled: 1
+    path: Assets/Scenes/Level1A.unity
+    guid: 35fbfc174126f934f9fae8d749607f5b
+  - enabled: 1
+    path: Assets/Scenes/Level2A.unity
+    guid: 564b6d17a3751534ca88a702feeaa826
+  - enabled: 1
+    path: Assets/Scenes/Level3A.unity
+    guid: 5b8ca7ecc75808144902bf5847989901
+  - enabled: 1
+    path: Assets/Scenes/level4B.unity
+    guid: beb148e2aa19c73448f86c35e2bb0738
+  - enabled: 1
+    path: Assets/Scenes/level5B.unity
+    guid: a342f9d6ee1926d41a201aa7629a7d34
+  - enabled: 1
+    path: Assets/Scenes/LevelSurvival.unity
+    guid: 6be5779ea3c6dd44082f3f2ce815eeed
   m_configObjects: {}
