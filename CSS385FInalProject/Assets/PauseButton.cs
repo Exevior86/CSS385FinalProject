@@ -25,6 +25,7 @@ public class PauseButton : MonoBehaviour
         PauseUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
+        Cursor.visible = false;
     }
     public void Pause()
     {

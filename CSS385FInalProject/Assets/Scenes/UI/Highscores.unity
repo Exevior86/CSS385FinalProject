@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -157,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.01941297, y: 0.7826675}
   m_AnchorMax: {x: 0.109724686, y: 0.94655585}
-  m_AnchoredPosition: {x: -2.2000122, y: 2.300003}
+  m_AnchoredPosition: {x: -2.1999512, y: 2.300003}
   m_SizeDelta: {x: -2.4000015, y: 3.6000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462853322

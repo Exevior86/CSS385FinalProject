@@ -29,7 +29,7 @@ public class UIScript : MonoBehaviour
 
     public void GotoGame()
     {
-        LevelController.killCount = LevelController.difficulty * level * 75;
+        LevelController.killCount = LevelController.difficulty * level *100;
         LevelController.survival = false;
         Debug.Log("Difficulty = " + LevelController.difficulty);
         Debug.Log("Killcount = " + LevelController.killCount);
