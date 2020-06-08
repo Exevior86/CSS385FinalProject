@@ -37,7 +37,6 @@ ScriptsOnlyBuild:
     - score
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -429,9 +428,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11512}
     - Class: 114
-      Script: {instanceID: 93454}
+      Script: {instanceID: 24456}
     - Class: 114
-      Script: {instanceID: 93456}
+      Script: {instanceID: 24458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1691,4 +1690,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/level4B.unity
   - Assets/Scenes/level5B.unity
   - Assets/Scenes/LevelSurvival.unity
-  playerPath: C:/Users/bucco/OneDrive/Desktop/CSS385Finalproject/CSS385FInalProject.exe
+  playerPath: C:/Users/bucco/OneDrive/Desktop/CellSurvivor/CSS385FInalProject.exe
