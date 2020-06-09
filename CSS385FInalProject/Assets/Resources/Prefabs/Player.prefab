@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1101536839
+  m_SortingLayerID: -720158797
   m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: -4186569870743770075, guid: eaf7e072f9d2739459127b0a1dd82a0f,
@@ -101,7 +101,6 @@ MonoBehaviour:
   player: {fileID: 5064247818757625520}
   bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
     type: 3}
-  bulletSpeed: 25
   cooldownTimer: 0
   muteSound: 0
   radius: 100
@@ -162,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.89, y: 1.14}
+  m_Size: {x: 2.18, y: 1.14}
   m_EdgeRadius: 0
 --- !u!1001 &5064247819359898264
 PrefabInstance:

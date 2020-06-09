@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
     public static bool lastLevel;
     public static int killCount = 100;
     public static int currentLevel = 1;
-    public static int difficulty;
+    public static int difficulty = 2;
     public Slider Slider;
     private MainController mainController = null;
 
@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
 
     static void UpdateKillAmount()
     {
-        killCount = killCount + (75 * currentLevel * (int)difficulty);
+        killCount += (75 * currentLevel * (int)difficulty);
     }
 
     public void ChangeValue()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VirusBehavior : MonoBehaviour
 {
-    public int mMaxHealth = 2;
+    private int mMaxHealth = 1;
     private int mCurrentHealth = 1;
     public static int damage = 1;
     public float mProbabilityOfTargetingPlayer = 0.25f;
@@ -35,7 +35,8 @@ public class VirusBehavior : MonoBehaviour
     {
         mMainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mMainController != null);
-        mCurrentHealth = mCurrentHealth * LevelController.difficulty;
+       
+        Debug.Log(LevelController.difficulty);
     }
 
     void OnEnable()
@@ -47,7 +48,7 @@ public class VirusBehavior : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         mDestroyed = false;
-        mCurrentHealth = mMaxHealth;
+        mCurrentHealth = LevelController.difficulty;
         //mSecondsSinceTargetChange = 0;
     }
 

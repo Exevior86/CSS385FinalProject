@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WideShotPower : MonoBehaviour
 {
-    public float cooldown = 5;
+    public float cooldown = 8;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

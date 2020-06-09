@@ -9,12 +9,17 @@ public class UIScript : MonoBehaviour
 
     private void Awake()
     {
-        LevelController.difficulty = 1;
+       //LevelController.difficulty = 1;
     }
 
     public void GotoSettings()
     {
         SceneManager.LoadScene("Scenes/UI/Settings");
+    }
+
+    public void GotoSettings2()
+    {
+        SceneManager.LoadScene("Scenes/UI/Settings2");
     }
 
     public void GotoInstructions()
@@ -40,6 +45,7 @@ public class UIScript : MonoBehaviour
 
     public void GotoIntro()
     {
+        Cursor.visible = true;
         LevelController.lastLevel = false;
         LevelController.survival = false;
         LevelController.killCount = 75;

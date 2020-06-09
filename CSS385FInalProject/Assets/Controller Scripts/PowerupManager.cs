@@ -6,11 +6,12 @@ public class PowerupManager : MonoBehaviour
 {
     public float timer = 20f;
     public GameObject player;
-    private static Vector2 screenBounds;
+    private static Vector2 topRight;
     private static string newpowerup;
     private static Vector3 newpos;
     private static PowerupManager instance;
     private int currentKills;
+    private bool spawned = false;
 
     void Awake()
     {
@@ -22,53 +23,84 @@ public class PowerupManager : MonoBehaviour
         if (currentKills != ScoreScript.VirusKilled)
         {
             currentKills = ScoreScript.VirusKilled;
+            if (ScoreScript.VirusKilled % 50 == 0)
+            {
+                SpawnCheck();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             SpawnCheck();
         }
     }
 
     void SpawnCheck()
     {
-        int wide = 1;
-        int rapid = 1;
-        int heart = 1;
-        int shield = 1;
+        //int wide = 1;
+        //int rapid = 1;
+        //int heart = 1;
+        //int shield = 1;
 
-        if (!LevelController.survival)
-        {
-            wide = (ScoreScript.VirusKilled + 1) % 75;
-            rapid = (ScoreScript.VirusKilled + 1) % 75;
-            heart = (ScoreScript.VirusKilled + 1) % 75;
-            shield = (ScoreScript.VirusKilled + 1) % 75;
-        }
-        if (LevelController.survival)
-        {
-            wide = (ScoreScript.VirusKilled + 1) % 76;
-            rapid = (ScoreScript.VirusKilled + 1) % 76;
-            heart = (ScoreScript.VirusKilled + 1) % 76;
-            shield = (ScoreScript.VirusKilled + 1) % 76;
-        }
+        //if (!LevelController.survival)
+        //{
+        //    wide = (ScoreScript.VirusKilled + 1) % 75;
+        //    rapid = (ScoreScript.VirusKilled + 1) % 75;
+        //    heart = (ScoreScript.VirusKilled + 1) % 75;
+        //    shield = (ScoreScript.VirusKilled + 1) % 75;
+        //}
+        //if (LevelController.survival)
+        //{
+        //    wide = (ScoreScript.VirusKilled + 1) % 76;
+        //    rapid = (ScoreScript.VirusKilled + 1) % 76;
+        //    heart = (ScoreScript.VirusKilled + 1) % 76;
+        //    shield = (ScoreScript.VirusKilled + 1) % 76;
+        //}
 
-        newpos = player.transform.position;
-        if (wide == 0)
+        //newpos = player.transform.position;
+        //if (wide == 0)
+        //{
+        //    newpowerup = "Prefabs/powerupWide";
+        //    SpawnReal();
+        //}
+        //if (rapid == 0)
+        //{
+        //    newpowerup = "Prefabs/RapidFire";
+        //    SpawnReal();
+        //}
+        //if (heart == 0)
+        //{
+        //    newpowerup = "Prefabs/Health";
+        //    SpawnReal();
+        //}
+        //if (shield == 0)
+        //{
+        //    newpowerup = "Prefabs/Shield";
+        //    SpawnReal();
+        //}
+
+        int randVal = Mathf.RoundToInt(Random.Range(0, 4));
+        Debug.Log(randVal);
+
+        if (randVal == 0)
         {
             newpowerup = "Prefabs/powerupWide";
-            SpawnReal();
         }
-        if (rapid == 0)
+        else if (randVal == 1)
         {
             newpowerup = "Prefabs/RapidFire";
-            SpawnReal();
         }
-        if (heart == 0)
+        else if (randVal == 2)
         {
             newpowerup = "Prefabs/Health";
-            SpawnReal();
         }
-        if (shield == 0)
+        else if (randVal == 3)
         {
             newpowerup = "Prefabs/Shield";
-            SpawnReal();
         }
+
+        SpawnReal();
+
     }
 
     public static void Spawn(string powerup, Vector3 pos)
@@ -80,21 +112,8 @@ public class PowerupManager : MonoBehaviour
 
     public void SpawnReal()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        bool powerupSpawned = false;
-        while (!powerupSpawned)
-        {
-            Vector3 powerupPosition = new Vector3(Random.Range(0, screenBounds.x), Random.Range(0, screenBounds.y), 0f);
-            if ((powerupPosition - newpos).magnitude < 1)
-            {
-                continue;
-            }
-            else
-            {
-                Object loaded = Resources.Load(newpowerup);
-                Instantiate(loaded, powerupPosition, Quaternion.identity);
-                powerupSpawned = true;
-            }
-        }
+        Vector2 powerUpPosition = player.transform.position + ((Vector3)Random.insideUnitCircle * 10);
+        Object loaded = Resources.Load(newpowerup);
+        Instantiate(loaded, powerUpPosition, Quaternion.identity);
     }
 }

@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     public static GameObject crosshairs;
-    public float bulletSpeed = 15.0f;
+    private float bulletSpeed = 25.0f;
 
     public static int bombs = 3;
     public static float bombCooldown = 0;

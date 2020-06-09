@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RapidFire : MonoBehaviour
 {
-    private int cooldown = 5;
+    private int cooldown = 8;
     private float modifier;
 
 

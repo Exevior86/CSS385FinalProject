@@ -14,11 +14,12 @@ public class UpgradeManager : MonoBehaviour
     {
         mEnemyTarget = GetNextEnemyTarget();
         mainController.SetEnemyTarget(mEnemyTarget);
+        Debug.Log(mEnemyTarget);
     }
 
     private int GetNextEnemyTarget()
     {
-        return (int)Mathf.Pow(10, mainController.GetNumberOfClones() + 1) * 4;
+        return (int)(Mathf.Pow(mainController.GetNumberOfClones() + 1, 2)) * 50;
     }
 
 
@@ -26,6 +27,7 @@ public class UpgradeManager : MonoBehaviour
     {
         mainController.CreateClone();
         mEnemyTarget = GetNextEnemyTarget();
+        Debug.Log(mEnemyTarget);
         mainController.SetEnemyTarget(mEnemyTarget);
     }
 
