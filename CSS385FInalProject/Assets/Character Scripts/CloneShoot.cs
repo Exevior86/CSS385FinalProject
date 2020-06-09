@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class CloneShoot : MonoBehaviour
 {
-   // public GameObject crosshairs;
+    // public GameObject crosshairs;
     public GameObject player;
     public GameObject bulletPrefab;
-    public static GameObject crosshairs;
+
     private float bulletSpeed = 25.0f;
 
-    public static int bombs = 3;
-    public static float bombCooldown = 0;
-    public static float cooldown = .1f;
-    public float cooldownTimer = 0;
-    public static float powerUpCdTimer = 0;
 
-    public static bool wideShot = false;
-    public static bool rapidFire = false;
+    public float cooldownTimer = 0;
+
+
+
     public static int shield = 0;
     public static int damage = 1;
     private Vector3 target;
@@ -27,7 +24,6 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        crosshairs = GameObject.Find("CrossHairs 1");
         mainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mainController != null);
     }
@@ -36,65 +32,36 @@ public class Shoot : MonoBehaviour
     void LateUpdate()
     {
         target = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        crosshairs.transform.position = new Vector2(target.x, target.y);
-
         Vector3 difference = target - transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         difference.Normalize();
         if (!PauseButton.GamePaused)
         {
-            if (powerUpCdTimer > 0)
-            {
-                powerUpCdTimer -= Time.deltaTime;
-            }
 
             if (cooldownTimer > 0)
             {
                 cooldownTimer -= Time.deltaTime;
             }
-            if (bombCooldown > 0)
-            {
-                bombCooldown -= Time.deltaTime;
-            }
             if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
             {
                 if (cooldownTimer <= 0)
                 {
-                    if (wideShot && powerUpCdTimer > 0)
+                    if (Shoot.wideShot && Shoot.powerUpCdTimer > 0)
                     {
                         fireWide(difference, rotationZ);
                     }
-                    if (rapidFire && powerUpCdTimer > 0)
+                    if (Shoot.rapidFire && Shoot.powerUpCdTimer > 0)
                     {
                         bulletSpeed = 35;
                         fireBullet(difference, rotationZ);
                     }
-                    if (powerUpCdTimer <= 0)
+                    if (Shoot.powerUpCdTimer <= 0)
                     {
-                        clearPowerUps();
                         fireBullet(difference, rotationZ);
                     }
 
-                    SoundManagerScript.PlaySound("pow");
-                    cooldownTimer = cooldown;
+                    cooldownTimer = Shoot.cooldown;
                 }
-            }
-            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.B))
-            {
-                if (bombs > 0 && bombCooldown <= 0)
-                {
-                    mainController.PlayBombEffects();
-                    clearScreen();
-                    bombs--;
-                    bombCooldown = 20;
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.L)
-                && Input.GetKey(KeyCode.LeftControl)
-                && Input.GetKey(KeyCode.RightShift))
-            {
-                ScoreScript.VirusKilled += 10000;
             }
         }
     }
@@ -142,50 +109,25 @@ public class Shoot : MonoBehaviour
         Destroy(c.gameObject, 2);
     }
 
-    private void clearPowerUps()
-    {
-        bulletSpeed = 25;
-        wideShot = false;
-        rapidFire = false;
-        cooldown = .1f;
-    }
-
     public float radius = 10f;
 
-    private void clearScreen()
-    {
-        Vector2 positionExplode = transform.position;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(positionExplode, radius);
+   
 
-        SoundManagerScript.PlaySound("Kaboom");
-
-        foreach (Collider2D hit in colliders)
-        {
-            if (hit != null)
-            {
-                if (hit.CompareTag("Virus"))
-                {
-                    hit.gameObject.GetComponent<VirusBehavior>().Kill();
-                }
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Virus") && collision.gameObject.GetComponent<VirusBehavior>().isDamaging())
-        {
-            mainController.PlayHitEffects();
-            if (shield > 0)
-            {
-                SoundManagerScript.PlaySound("TakeDamage");
-                shield--;
-            }
-            else
-            {
-                mainController.LowerLives();
-                mainController.PlayDamageEffects();
-            }
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Virus") && collision.gameObject.GetComponent<VirusBehavior>().isDamaging())
+    //    {
+    //        mainController.PlayHitEffects();
+    //        if (shield > 0)
+    //        {
+    //            SoundManagerScript.PlaySound("TakeDamage");
+    //            shield--;
+    //        }
+    //        else
+    //        {
+    //            mainController.LowerLives();
+    //            mainController.PlayDamageEffects();
+    //        }
+    //    }
+    //}
 }

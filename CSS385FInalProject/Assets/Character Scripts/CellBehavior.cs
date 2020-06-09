@@ -62,11 +62,6 @@ public class CellBehavior : MonoBehaviour
             SpawnVirus();
             cooldownTimer = cooldown;
         }
-
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Disinfect();
-        }
     }
 
     private void UpdateHealthDisplay()

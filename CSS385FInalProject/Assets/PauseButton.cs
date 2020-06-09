@@ -23,7 +23,7 @@ public class PauseButton : MonoBehaviour
     public void Resume()
     {
         PauseUI.SetActive(false);
-        Time.timeScale = 10f;
+        Time.timeScale = 1f;
         GamePaused = false;
         Cursor.visible = false;
     }

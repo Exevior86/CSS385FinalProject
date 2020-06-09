@@ -36,7 +36,6 @@ public class VirusBehavior : MonoBehaviour
         mMainController = GameObject.Find("GameManager").GetComponent<MainController>();
         Debug.Assert(mMainController != null);
        
-        Debug.Log(LevelController.difficulty);
     }
 
     void OnEnable()

@@ -14,7 +14,6 @@ public class UpgradeManager : MonoBehaviour
     {
         mEnemyTarget = GetNextEnemyTarget();
         mainController.SetEnemyTarget(mEnemyTarget);
-        Debug.Log(mEnemyTarget);
     }
 
     private int GetNextEnemyTarget()
@@ -27,7 +26,6 @@ public class UpgradeManager : MonoBehaviour
     {
         mainController.CreateClone();
         mEnemyTarget = GetNextEnemyTarget();
-        Debug.Log(mEnemyTarget);
         mainController.SetEnemyTarget(mEnemyTarget);
     }
 

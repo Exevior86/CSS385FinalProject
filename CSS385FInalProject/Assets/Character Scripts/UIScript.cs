@@ -36,8 +36,8 @@ public class UIScript : MonoBehaviour
     {
         LevelController.killCount = LevelController.difficulty * level *100;
         LevelController.survival = false;
-        Debug.Log("Difficulty = " + LevelController.difficulty);
-        Debug.Log("Killcount = " + LevelController.killCount);
+        //Debug.Log("Difficulty = " + LevelController.difficulty);
+        //Debug.Log("Killcount = " + LevelController.killCount);
         Cursor.visible = false;
         ResetCharacter();
         SceneManager.LoadScene("Scenes/Level1A");

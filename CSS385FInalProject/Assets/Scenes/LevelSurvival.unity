@@ -16136,7 +16136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
-  player: {fileID: 0}
+  player: {fileID: 2113069576}
 --- !u!1001 &1466179190
 PrefabInstance:
   m_ObjectHideFlags: 0

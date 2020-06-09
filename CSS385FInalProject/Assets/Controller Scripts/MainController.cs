@@ -68,12 +68,6 @@ public class MainController : MonoBehaviour
         Debug.Assert(mVirusPool != null);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-            CreateClone();
-    }
-
     public bool SpawnVirus(Transform transform)
     {
         return mVirusPool.InstantiateObject(transform);

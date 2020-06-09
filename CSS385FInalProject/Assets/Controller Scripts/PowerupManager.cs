@@ -28,11 +28,6 @@ public class PowerupManager : MonoBehaviour
                 SpawnCheck();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SpawnCheck();
-        }
     }
 
     void SpawnCheck()
@@ -80,7 +75,7 @@ public class PowerupManager : MonoBehaviour
         //}
 
         int randVal = Mathf.RoundToInt(Random.Range(0, 4));
-        Debug.Log(randVal);
+
 
         if (randVal == 0)
         {

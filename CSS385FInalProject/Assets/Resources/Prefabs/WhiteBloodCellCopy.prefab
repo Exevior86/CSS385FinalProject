@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 306406805900839928}
   - component: {fileID: 306406805900839935}
-  - component: {fileID: 306406805900839934}
   - component: {fileID: 306406805900839932}
   - component: {fileID: 306406805900839907}
   - component: {fileID: 306406805900839933}
+  - component: {fileID: 1766231362748846018}
   m_Layer: 0
   m_Name: WhiteBloodCellCopy
   m_TagString: Player
@@ -85,24 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &306406805900839934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306406805900839905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affb6058903c4b843a36cf336e7541b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 306406805900839905}
-  bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
-    type: 3}
-  cooldownTimer: 0
-  muteSound: 1
-  radius: 10
 --- !u!50 &306406805900839932
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +147,20 @@ MonoBehaviour:
   mTarget: {fileID: 0}
   mTargetOffset: {x: 1, y: 0, z: 0}
   mSpeed: 15
+--- !u!114 &1766231362748846018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306406805900839905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfab04b6cbe3574e93ede6b070afeee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 306406805900839905}
+  bulletPrefab: {fileID: 8679665189163408359, guid: da6c245d84bd9164980f560ac2fbfd57,
+    type: 3}
+  cooldownTimer: 0
+  radius: 100

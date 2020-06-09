@@ -32,7 +32,6 @@ public class SurvivalDifficultyScaler : MonoBehaviour
 
             virusAggression.IncrementAggresion(0.1f);
             virusPool.IncreaseCapacity(10);
-            Debug.Log("difficulty increase");
         } 
     }
 }
