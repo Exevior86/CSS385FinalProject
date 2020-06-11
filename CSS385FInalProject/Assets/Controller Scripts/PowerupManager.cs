@@ -12,6 +12,7 @@ public class PowerupManager : MonoBehaviour
     private static PowerupManager instance;
     private int currentKills;
     private bool spawned = false;
+    public int killsPerSpawn = 50;
 
     void Awake()
     {
@@ -23,7 +24,7 @@ public class PowerupManager : MonoBehaviour
         if (currentKills != ScoreScript.VirusKilled)
         {
             currentKills = ScoreScript.VirusKilled;
-            if (ScoreScript.VirusKilled % 50 == 0)
+            if (ScoreScript.VirusKilled % killsPerSpawn == 0)
             {
                 SpawnCheck();
             }
