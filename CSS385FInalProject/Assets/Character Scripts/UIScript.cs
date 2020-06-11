@@ -27,6 +27,11 @@ public class UIScript : MonoBehaviour
         SceneManager.LoadScene("Scenes/UI/instructions");
     }
 
+    public void GotoCredits()
+    {
+        SceneManager.LoadScene("Scenes/UI/Credits");
+    }
+
     public void GotoHighscores()
     {
         SceneManager.LoadScene("Scenes/UI/Highscores");
@@ -112,6 +117,7 @@ public class UIScript : MonoBehaviour
         Shoot.bombCooldown = 0;
         Shoot.wideShot = false;
         Shoot.rapidFire = false;
+        Shoot.powerUpCdTimer = 0;
         Movement.sprintEnergy = 100;
         Movement.mHeroSpeed = 10;
     }

@@ -10954,7 +10954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80434357bab48d4384c67a9e7fcd1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kMaxClones: 10
+  kMaxClones: 5
   averageDistanceFromPlayer: 3
   distanceFromPlayerVariance: 0.75
   averageSpeed: 10
@@ -16137,6 +16137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 10
   player: {fileID: 2113069576}
+  killsPerSpawn: 200
 --- !u!1001 &1466179190
 PrefabInstance:
   m_ObjectHideFlags: 0
